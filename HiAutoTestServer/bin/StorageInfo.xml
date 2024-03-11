@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--!- -本文件用于描述存储信息- - -->
+<!--!- -CaseID：可以每个用例存储不同的ICD- - -->
+<!--!- -ICDID：罗列所有需要存储的ICD- - -->
+<autoTest version="1.0" name="StorageInfo">
+    <storage StorageName="test" Name="NO.1" Alias="None" IP="192.168.1.120">
+        <case CaseID="16823427-8ab0-449e-8675-084529d1a4b9">
+            <model Name="JYPXIe552">
+                <input>
+                    <var Name="Shared Memory Get" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Get" DataType="double" Length="8" />
+                </input>
+                <output>
+                    <var Name="Shared Memory Set" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set" DataType="double" Length="8" />
+                    <var Name="Shared Memory Set1" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set1" DataType="double" Length="8" />
+                </output>
+            </model>
+        </case>
+    </storage>
+</autoTest>

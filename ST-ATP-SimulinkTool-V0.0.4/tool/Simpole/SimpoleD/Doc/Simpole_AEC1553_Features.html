@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpole_AEC1553_Features</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">HiGale<sup>&reg;</sup>
+    </td>   
+     <th width="4%" class="tableFont" scope="col">
+<a href="Simpole_AEC1553.html"><img class="topimg" src="images/b_prev.gif"  ></a></th> 
+
+
+       
+<th width="3%" class="tableFont" scope="col">
+ <a href="Simpole_AEC1553_SimpoleD_Reference.html">
+<img class="topimg"src="images/b_next.gif"  ></a> </th>
+  </tr>
+</table>
+<h1>AEC1553 Features（AEC1553 特征）
+</h1>
+<p>
+1553总线系统由总线控制器（Bus Controller，BC）、远程终端（Remote Terminal，RT）和总线监听器（Bus Monitor，BM）组成，采用双冗余热备份总线Bus A、Bus B，
+1553总线系统框架图如图所示。</p><img src="images/GE1553 Features.gif" >
+<p>BC负责总线上数据流向，只有BC才能向数据总线上发送命令字，任意时刻，系统中必须有且只能有一个BC。RT是响应BC发送过来的命令，在总线与子系统之间按照有效的指令规定的方式传输数据或执行模式代码操作，系统中最多有31个RT。BM，也称为MT，只能接收总线上数据，可选择性接收数据总线上的信息并保存，如收集到的信息用于对飞行测试记录或飞行任务的分析，系统中可以无BM。 </p>
+<p>MIL-STD-1553 总线的帧结构是以命令字、状态字和数据字的形式表现出来的。其中命令字是控制器用于向终端或显示器发送命令信息； 状态字则是终端向控制器发送关于总线和终端相连子系统等方面的状态信息；而数据字则用于控制器和终端之间、终端与终端之间发送的相关数据信息。1553总线已被卫星、飞船、国际空间站、港口运输、舰船、坦克、火炮等多个行业广泛采用。
+</p>
+<p>具体内容如下：</p>
+
+<p><A href="#boardhbmf1553_frame">板卡特点</A></p>
+<p><A href="#boardhbmf1553_feature">一般规格</A></p>
+<hr>
+
+<h2><a name="boardhbmf1553_frame">板卡特点</a> </h2>
+<p>该板卡具有以下特点：</p>
+<ul>
+  <li>32bit/33MHz PMC总线 </li>
+  <li>双通道多功能1553数据通讯卡 </li>
+  <li>每通道1个BC（总线控制器） </li>
+  <li>每通道0~31个RT（远程终端） </li>
+  <li>每通道1个MT（总线监视器） </li>
+  <li>BC、RT、MT 可同时存在 </li>
+  <li>双冗余总线 </li>
+  <li>每通道带RTC功能（可选），RTC计数器48位，分辨率可设 </li>
+  <li>32位时标，分辨率1&#956;s </li>
+  <li>软件可设置应答超时时间 </li>
+  <li>大容量的数据存储：16M &#215; 16bit</li>
+</ul>
+<h2><a name="boardhbmf1553_feature">一般规格</a> </h2>
+<ul>
+  <li>物理尺寸：150mm&#215;75mm </li>
+  <li>连接器：J30J-25ZKWP7-T/PMC P4连接器 </li>
+  <li>工作电源：5V </li>
+  <li>工作温度：常温实验室环境 </li>
+  <li>相对湿度：实验室环境</li>
+</ul>
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>  
+    
+ <th   scope="col"><div align="left"><a href="Simpole_AEC1553.html"><img class="tailimg"src="images/b_prev.gif"  ></a>AEC1553 Implementation Guide</div></th>
+    
+<th   scope="col">
+<div align="right">
+AEC1553 SimpoleD Reference
+ <a href="Simpole_AEC1553_SimpoleD_Reference.html">
+<img class="tailimg"src="images/b_next.gif"  ></a> 
+</div>
+</th>    
+
+  </tr>
+</table>
+
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>

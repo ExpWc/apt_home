@@ -1,0 +1,145 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PCI6509 Features</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">Simpole<sup>&reg;</sup>
+    </td>   
+<th width="4%" scope="col">
+<a href="Simpole_PCI6509.html">
+<img class="topimg"src="images/b_prev.gif" ></a>
+</th> 
+   
+<th width="3%" scope="col">
+<a href="Simpole_PCI6509_SimpoleD_Reference.html">
+<img class="topimg"src="images/b_next.gif" ></a>
+</th>
+  </tr>
+</table>
+<h1>PCI6509 Features（PCI6509特征）</h1>
+<p >PCI6509 是NI公司以高驱动能力DIO为主要特征的多功能I/O板卡，包括96通道的双向DIO，其中每8个DIO通道组成一个8bit的端口，共12个端口。
+</p>
+<p >&nbsp;</p>
+<p >具体内容如下：</p>
+<p><a href="#PXI6509_Architecture">板卡架构</a></p>
+<p><a href="#Digital_IO_Unit">数字I/O单元</a></p>
+
+
+
+
+
+<hr>
+
+<h2><a name="PXI6509_Architecture">板卡架构</a></h2>
+<p>PCI6509板卡提供了系统模型和外部设备之间的接口。PCI6509板卡具有12个数字I/O端口，每个端口有8个通道，共计96个双向双向的数字I/O通道，板卡架构图如图所示：</p>
+
+<img   src="images/PXI6509_Features_Architechure.jpg"  >
+
+<h2><a name="Digital_IO_Unit">数字I/O单元</a></h2>
+
+
+
+<p>PCI6509提供了Digital I/O 单元。Digital I/O单元具有以下特征：
+</p>
+<ul>
+<li>  96 DIO通道，其中每8个DIO通道为一组，形成一个8bit的端口，共12组；
+</li><li> 每个DIO可单独编程为输入或输出
+
+ </li><li> 兼容TTL / CMOS 
+
+</li><li>作为数字输入时，具有滤波功能；具有电平变化检测功能；
+
+ </li><li>每个DIO通道的上电状态可编程
+
+</li>
+</ul>
+<p>SimpoleD 提供了一个DIO的模块，该模块支持96个DIO通道，这些通道8个一组，组成一个8bit的端口，每个端口可便成为输入或输出。SimpoleD DIO模块与板卡上DIO端口之间的映射关系如下表所示。
+</p>
+
+<p><a name="PXI6509_DIO">PCI6509 DIO 端口和SimpoleD 端口I/O映射表</a></p>
+<div class="table-style" >
+<table border="0" cellspacing="1" cellpadding="0" >
+<tr align="center">
+<th>相关RTD模块</th>
+<th>RTD Group Number （动态配置DI或DO）</th>
+<th>板卡端口引脚</th>
+</tr>
+<tr align="center">
+<td rowspan="12">PCI 6509 DIO</td>
+<td> Group Number 1</td>
+<td> P0.0-P0.7</td>
+</tr>
+<tr align="center"><td>Group Number 2</td>
+<td> P1.0-P1.7</td>
+</tr>
+<tr align="center"><td>Group Number 3</td>
+<td> P2.0-P2.7</td>
+</tr>
+<tr align="center"><td>Group Number 4</td>
+<td> P3.0-P3.7</td>
+</tr>
+<tr align="center"><td>Group Number 5</td>
+<td> P4.0-P4.7</td>
+</tr>
+<tr align="center"><td>Group Number 6</td>
+<td> P5.0-P5.7</td>
+</tr>
+<tr align="center"><td>Group Number 7</td>
+<td> P6.0-P6.7</td>
+</tr>
+<tr align="center"><td>Group Number 8</td>
+<td> P7.0-P7.7</td>
+</tr>
+<tr align="center"><td>Group Number 9</td>
+<td> P8.0-P8.7</td>
+</tr>
+<tr align="center"><td>Group Number 10</td>
+<td> P9.0-P9.7</td>
+</tr>
+<tr align="center"><td>Group Number 11</td>
+<td> P10.0-P10.7</td>
+</tr>
+<tr align="center"><td>Group Number 12</td>
+<td> P11.0-P11.7</td>
+</tr>
+</table>
+</div>
+
+
+
+
+<p>&nbsp;</p>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+<th   scope="col">
+<div align="left">
+<a href="Simpole_PCI6509.html">
+<img class="tailimg"src="images/b_prev.gif" ></a>
+PCI6509 Implementation Guide 
+</div>
+</th>
+
+<th  scope="col">
+<div align="right">
+PCI6509 SimpoleD Reference  
+<a href="Simpole_PCI6509_SimpoleD_Reference.html">
+<img class="tailimg"src="images/b_next.gif" ></a>
+</div>
+</th>
+  </tr>
+</table>
+
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--!- -StartTime ：开始时间- - -->
+<!--!- -ExcTime   ：持续时间- - -->
+<!--!- -Amplitude ：幅值- - -->
+<!--!- -ExcInteral：激励间隔- - -->
+<!--!- -Phase     ：X轴偏移- - -->
+<!--!- -Skewing   ：Y轴偏移- - -->
+<!--!- -Period    ：周期- - -->
+<!--!- -Duty      ：占空比- - -->
+<!--!- -Type 波形包括：Constant、SawtoothWave、SineWave、SlopeWave、TriangleWave、SquareWave、CustomWave- - -->
+<!--!- -Constant     = 常值   ：—————— - - -->
+<!--!- -SlopeWave    = 斜坡   ：╱ - - -->
+<!--!- -SawtoothWave = 锯齿波 ：╱│╱│╱│ - - -->
+<!--!- -SineWave     = 正弦波 ：～～～～ - - -->
+<!--!- -TriangleWave = 三角波 ：╱╲╱╲╱╲ - - -->
+<!--!- -SquareWave   = 矩形波 ；_█_█_█ - - -->
+<!--!- -CustomWave   = 组合波形- - -->
+<!--!- -curveList 描述波形- - -->
+<!--!- -curveBind 确定哪个step启动哪个波形- - -->
+<autoTest version="1.0" name="CurveInfo">
+    <curveList>
+        <curve CurveID="63f45d55-f2ab-4339-9ec0-c5485889d801" Name="新建波形" Type="SlopeWave" StartTime="0" ExcTime="10000" ExcInteral="500" Amplitude="53" Phase="0" Skewing="0" />
+        <curve CurveID="67954e43-2f65-466c-b6c2-cf70789fd5c5" Name="新建波形_2" Type="SineWave" StartTime="0" ExcTime="10000" ExcInteral="10" Period="500" Amplitude="4" Phase="0" Skewing="2" />
+    </curveList>
+    <curveBind Name="NO.1" Alias="None" IP="192.168.1.120" />
+</autoTest>

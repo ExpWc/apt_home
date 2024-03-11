@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PCI6509 SimpoleD Reference</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">SimpoleD<sup>&reg;</sup>
+    </td>   
+    <th width="4%"  scope="col"><a href="Simpole_PCI6509_Features.html"><img class="topimg" src="images/b_prev.gif" ></a></th>    
+    <th width="3%"  scope="col"> <a href="Simpole_PCI6509_Hardware_Reference.html">
+<img class="topimg"src="images/b_next.gif" ></a> </th>
+  </tr>
+</table>
+<h1>PCI6509 SimpoleD Reference （PCI6509 SimpoleD 参考）</h1>
+<p >PCI6509实时驱动（SimpoleD）是PCI6509 I/O 板卡与系统模型的接口。
+</p>
+<p>本节内容主要介绍PCI6509 SimpoleD库的功能、配置方法。
+</p>
+
+<p >&nbsp; </p>
+
+<p >具体内容如下：</p>
+<p><a href="#PXI6509_RTD_Summarize">PCI6509 SimpoleD 库概述</a></p>
+<p><a href="#PXI6509_RTD_Module">PCI6509 SimpileD 库模块</a></p>
+
+
+
+<hr>
+
+<h2><a name="PXI6509_RTD_Summarize">PCI6509 SimpoleD 库概述</a></h2>
+<p>PCI6509 Digital I/O板卡专门用完成DIO操作，包括12个端口，每个端口包含8个双向DIO通道，共96个DIO通道；在使用时，可以单独控制每个DIO通道，也可以对端口操作实现一个字节的并行输出，其中作为DO时有较高的驱动能力（24mA）。
+</p>
+<p>
+PCI6509板卡的SimpoleD库提供了驱动模块，用于在simulink模型中实现PCI6509的I/O功能。
+</p>
+
+<p>双击SimpoleD 库中图标：</p>
+<p><img src="images/PCIE650907.PNG" width="149" height="72"></p>
+<p>右键单击，从菜单中打开PCI6509的模块库：</p>
+<p><img src="images/PCIE650903.png" width="597" height="438"></p>
+<h2><a name="PXI6509_RTD_Module">PCI6509 SimpoleD 库模块</a> </h2>
+<p>各个单元以及相应模块的详细信息可以通过以下方式访问： </p>
+<ul >
+<li><a href="#DO_Unit">DO Unit
+</a><br>
+
+PCI-6509 DO
+</li><li><a href="#DI_Unit"> DI Unit
+</a><br>
+PCI-6509 DI
+</li>
+</ul>
+ 
+
+<h3><a name="DO_Unit">DO Unit</a></h3>
+<p><img src="images/PCIE650901.PNG" width="178" height="133"></p>
+<h3>模块功能 </h3>
+<p>配置板卡号、采用的端口号（组号）、终止输出电压。
+</p>
+<h3>I/O映射</h3>
+<p>输入：TTL电平的逻辑值。</p>
+<p>输出：无。</p>
+<p>该模块与板卡I/O的映射信息请参见<a href="Simpole_PCI6509_Features.html#PCI6509_DIO">PCI6509 DIO 端口和SimpoleD 端口I/O映射表</a>。</p>
+<h3>I/O特性</h3>
+<p>板卡DIO通道电平信号和simulink数据类型之间的关系如下表所示    
+</p>
+<div class="table-style" >
+<table border="0" cellspacing="1" cellpadding="0" >
+<tr align="center">
+<th >DIO（TTL）</th>
+<th>Simulink</th>
+</tr>
+<tr align="center"><td>low</td>
+<td> 0（boolean）</td>
+</tr>
+<tr align="center"><td>high</td>
+<td> 1（boolean）</td>
+</tr>
+</table>
+</div>
+<h3>参数配置</h3>
+<p>PCI 6509 DO模块GUI配置界面如下图所示。</p>
+<p><img src="images/PCIE650904.png" width="406" height="548"></p>
+<p>BoardNo：选择板卡号，范围为1至16，如果同一个目标机中存在多块同类型的板卡，采用板卡号以区别使用某一块板卡。
+</p>
+<p>
+GroupNo：选择要使用的端口号（组号），选择范围1至12。</p>
+<p>Sample Time：配置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。 </p>
+<p><img src="images/PCIE650905.png" width="406" height="548"></p>
+<p> terminal Value：设定终止值，使被驱动外部设备在仿真结束时处于安全或者有效状态。</p>
+<p>setAll：列操作各个参数。如若CH1-8选择为low，则CH1至CH8的Terminal Value全部选择为low。</p>
+<h3><a name="DI_Unit">DI Unit</a></h3>
+<p><img src="images/PCIE650902.PNG" width="177" height="131"></p>
+<h3>模块功能</h3>
+<p>
+选择板卡号，要采用的端口号（组号）。 </p>
+<h3>
+I/O映射
+</h3>
+<p>输入：无。</p>
+<p>输出：TTL电平的逻辑值。</p>
+<p>该模块与板卡I/O的映射信息请参见<a href="Simpole_PCI6509_Features.html#PCI6509_DIO">PCI6509 DIO 端口和RTD 端口I/O映射表</a>。</p>
+<h3>I/O特性</h3>
+<p>板卡DIO通道电平信号和simulink数据类型之间的关系如下表所示    
+</p>
+ <div class="table-style" >
+<table border="0" cellspacing="1" cellpadding="0" >
+<tr align="center">
+<th >DIO（TTL）</th>
+<th>Simulink</th>
+</tr>
+<tr align="center"><td>low</td>
+<td> 0（boolean）</td>
+</tr>
+<tr align="center"><td>high</td>
+<td> 1（boolean）</td>
+</tr>
+</table>
+</div>
+<h3>参数配置</h3>
+<p>PCI6509板卡的DI模块GUI配置界面如下图所示。</p>
+<p><img src="images/PCIE650906.png" width="406" height="368"></p>
+<p> BoardNo：选择板卡号，范围为1至16，如果同一个目标机中存在多块同类型的板卡，采用板卡号以区别使用某一块板卡。
+</p>
+<p>GroupNo：选择要使用的作为数字输入的端口号。</p>
+<p>Sample Time：配置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。 </p>
+<p>注意：同一模型中不能同时将同一端口既作为数字输入又作为数字输出。
+
+</p><p>&nbsp;</p>
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+<th   scope="col">
+<div align="left">
+<a href="Simpole_PCI6509_Features.html"><img class="tailimg" src="images/b_prev.gif" ></a>
+PCI6509 Features 
+</div>
+</th>
+
+<th   scope="col">
+<div align="right">
+PCI6509 Hardware Reference
+ <a href="Simpole_PCI6509_Hardware_Reference.html">
+<img class="tailimg"src="images/b_next.gif" ></a> 
+</div>
+</th>
+  </tr>
+</table>
+
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>

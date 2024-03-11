@@ -1,0 +1,142 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PCI8432 SimpoleD Reference</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">Simpole<sup>&reg;</sup>
+    </td>   
+    <th width="4%"  scope="col"><a href="Simpole_PCI8432_Features.html"><img class="topimg" src="images/b_prev.gif"  ></a></th>    
+    <th width="3%"  scope="col"> <a href="Simpole_PCI8432_Hardware_Reference.html">
+<img class="topimg"src="images/b_next.gif"  ></a> </th>
+  </tr>
+</table>
+<h1>RS232 SimpoleD Reference </h1>
+<p >
+ RS232实时驱动（SimpoleD）是板卡的COM与系统模型的接口。本节内容主要介绍RS232 SimpoleD库的功能、配置。
+
+</p>
+
+<p >&nbsp;</p>
+<p >具体内容如下：</p>
+
+<p><a href="#PXI8432_RTD_Overview">RS232 SimpoleD 库概述</a></p>
+<p><a href="#PXI8432_RTD_Module">RS232 SimpoleD 库模块</a></p>
+
+
+<hr>
+<h2><a name="PXI8432_RTD_Overview">RS232 SimpoleD 库概述</a></h2>
+<p>RS232板卡的SimpoleD库提供了SimpoleD模块，用于在simulink模型中实现板卡的串行数据的发送、接收功能。
+</p>
+<p>双击SimpoleD 库中图标：</p>
+<p><img src="images/RS232_1.PNG" width="131" height="92"></p>
+<p>右键单击，从菜单中打开RS232的模块库：
+</p>
+<p><img src="images/RS232_2.png" width="579" height="613"></p>
+<h2><a name="PXI8432_RTD_Module">RS232 SimpoleD 库模块</a></h2>
+<p>RS232板卡的各个模块的设置使用如下： </p>
+<ul class="li1">
+<li> 
+<a href="#Frame_Setup_Unit">Setup Unit<br></a>RS232 SETUP
+</li><li>
+<a  href="#Frame_Read_Unit">Read  Unit</a><br>
+ RS232  Read
+</li>
+<li>
+<a href="#Frame_Write_Unit">Write Unit</a><br>
+ RS232  Write
+</li>
+</ul>
+
+<h3><a name="Frame_Setup_Unit">Setup Unit</a></h3>
+<p><img src="images/RS232_3.PNG" width="248" height="107"></p>
+<h3>模块功能</h3>
+<p>配置COM口、波特率、停止位、校验方式、数据位长度和采样时间。
+</p>
+<h3>参数配置</h3>
+<p>RS232 FrameSetup模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/RS232_4.png" width="406" height="458"></p>
+<p>ComNo：选择COM口，范围为4至35；
+</p>
+<p>BaudRate：选择波特率，支持标准和非标准波特率设置，波特率最高为1Mb/s；</p>
+<p>Parity：选择校验位，有三种模式，即NONE——无校验，EVEN——偶校验，ODD——奇校验； </p>
+<p>Data Bits：选择数据位，有4种模式，即8位、7位、6位、5位；</p>
+<p>Stop Bits：选择停止位，有三种模式，即1位、1.5位、2位。 </p>
+<p>Sample Time：配置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。</p>
+<h3><a name="Frame_Read_Unit">Read  Unit</a></h3>
+<p><img src="images/RS232_5.PNG" width="241" height="107"> </p>
+<h3>模块功能</h3>
+<p>配置接收串行数据的COM口、数据长度、帧头、帧尾和采样时间等。
+
+</p>
+<h3>I/O映射</h3>
+<p>Data：数据接收缓存区。</p>
+<p>Length/Valid：在变长的帧格式的情况下Length表示实际接收到的数据量，0表示没有接收到数据；在定长帧格式的情况下Valid表示缓存区是否接收到新的数据，1表示接收到新的数据，0表示没有接收到新数据。</p>
+<h3>参数配置</h3>
+<p>RS232 FrameRead 模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/RS232_6.png" width="406" height="518"></p>
+<p>
+  ComNo：选择COM口，范围为4至35；
+</p>
+<p>FrameType：选择帧类型，有Raw Data、Head+Length、Head+Tail、Fix Length四种类型选择； </p>
+<p>HeadLen：数据帧头长度，在Head+Length和Head+Tail两种帧格式时有效，最大数据宽度为10； </p>
+<p>TailLen：数据帧尾长度，在Head+Tail帧格式时有效，最大数据宽度为10；</p>
+<p>
+  DataLen：设置串行数据接收的长度，该长度为包含数据、帧头和帧尾的总长度，以字节为单位，数据长度可设置为1至256之间的任一整数；
+</p>
+<p>FrameHead：数据帧尾，在Head+Length和Head+Tail帧格式时有效，最大数据宽度为10； </p>
+<p>FrameTail：数据帧尾，在Head+Tail帧格式时有效，最大数据宽度为10； </p>
+<p>
+SampleTime：配置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。
+</p>
+
+<h3><a name="Frame_Write_Unit">Write Unit</a></h3>
+<p><img src="images/RS232_7.PNG" width="246" height="110"><img src="images/RS232_8.PNG" width="250" height="113"><img src="images/RS232_9.PNG" width="254" height="116"></p>
+<h3>模块功能</h3>
+<p>配置发送串行数据的COM口、数据类型和采样时间。
+</p>
+<h3>I/O映射</h3>
+<p>Data：数据发送缓存区。</p>
+<p>Head/Tail：只有在GUI配置界面里面配置了该选项有效才会出现对应的端口，分别表示帧头和帧尾信息，最大长度为10。</p>
+<h3>参数配置</h3>
+<p>RS232 FrameWrite 模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/RS232_10.png" width="406" height="368"></p>
+<p>ComNo：选择COM口，范围为4至35；
+</p>
+<p>DataType：选择帧类型，有None、Head、Head+Tail三种类型选择； </p>
+<p>Sample Time：配置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。 </p>
+<p >&nbsp;</p>
+
+<br>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+<th   scope="col">
+<div align="left">
+<a href="Simpole_PCI8432_Features.html"><img class="tailimg" src="images/b_prev.gif"  ></a>
+RS232 Features 
+</div>
+</th>
+
+<th   scope="col">
+<div align="right">
+RS232 Hardware Reference
+ <a href="Simpole_PCI8432_Hardware_Reference.html">
+<img class="tailimg"src="images/b_next.gif"  ></a> 
+</div>
+</th>
+  </tr>
+</table>
+
+<span class="copyright">&copy;simpole</span>
+
+</body>
+</html>

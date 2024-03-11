@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root simversion="R2017b" type="Matlab">
+    <model name="test1">
+        <signal>
+            <module dataType="double" length="8" offset="0" name="SharedMemoryGet" referenced="test1/Shared Memory Get" />
+            <module dataType="double" length="8" offset="8" name="SharedMemoryGet1" referenced="test1/Shared Memory Get1" />
+        </signal>
+    </model>
+</root>

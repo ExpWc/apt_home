@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root simversion="R2017b" type="Matlab">
+   <model name="test1" period="200000">
+      <ExternalGoTo>
+         <module dataType="double" length="8" name="Shared Memory Set" offset="0" referenced="test1/Shared Memory Set"/>
+         <module dataType="double" length="8" name="Shared Memory Set1" offset="0" referenced="test1/Shared Memory Set1"/>
+      </ExternalGoTo>
+      <ExternalFrom>
+         <module dataType="double" length="8" name="Shared Memory Get" offset="0" referenced="test1/Shared Memory Get"/>
+         <module dataType="double" length="8" name="Shared Memory Get1" offset="0" referenced="test1/Shared Memory Get1"/>
+      </ExternalFrom>
+   </model>
+</root>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpole_SerialBoards</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top class="story">Simpole<sup>&reg;</sup>
+    </td>   
+    <th width="4%"  scope="col">&nbsp;</th>    
+    <th width="3%"  scope="col"> <a href="Simpole_PCI8432.html">
+<img class="topimg"src="images/b_next.gif" width="17" height="17" ></a> </th>
+  </tr>
+  
+</table>
+<h1>Serial Boards Introduction（串口板卡介绍）
+</h1>
+<p>
+数据通信涉及两台数字设备之间传输数据的问题。常用的数据通信方式有并行通信和串行通信。串行通信是使数据一位一位进行传输而实现的通信。在实际传输中，如外部环境与CPU或计算机与计算机之间交换信息，是通过一对导线传送信息的。在传输中每一位数据都要占据一个固定的时间长度。与并行通信相比，串行通信具有传输线少，成本低等特点，特别适合远距离传送。串行通信的标准主要为RS232、RS422和RS485。</p>
+<p>RS232是由美国电子工业协会EIA于1969年制定并采用的一种串行通信接口标准，后被广泛采用，发展成为一种国际通用的串行通信接口标准。EIA规定的RS232的电气规格：电压-25V～-3V（逻辑1），电压+3V～+25V（逻辑0）。RS232所用的驱动芯片通常以±12V的电源来驱动信号线，但是实际上，因为传输线的连接状态及接收端负载阻抗的影响，均会造成电压的下降，但最低不得低于±12V以下。RS232是一种点对点的传输规范，数据信号采用单端方式，通信速率为20Kb/s。</p>
+<p>RS422由RS232发展而来。为改进RS232通信距离短、速度低的缺点，RS422定义了一种平衡通信接口，将通信速率提高到10Mb/s，允许在一条平衡总线上连接最多10个接收器。RS422是一种单机发送、多机接收的单向、平衡传输规范。RS422的数据信号采用差分传输方式，也称为平衡传输。它使用一对双绞线进行数据传输。</p>
+<p>为扩展应用范围，EIA在RS422的基础上制定了RS485标准，增加了多点、双向通信能力。RS485收发器采用平衡发送和差分接收，即在发送端，驱动器将TTL电平信号转换成差分信号输出；在接收端，接收器将差分信号变成TTL电平，因此具有抑制共模干扰的能力，加上接收器具有高的灵敏度，能检测低达200mV的电压，故数据传输可达千米以外。</p>
+<p>本文档以PCI8432/4和PCI8433/4为例介绍板卡及相关驱动。</p>
+<p>&nbsp;</p>
+<p><a href="Simpole_PCI8432.html">RS232  Implementation Guide </a>NI公司的RS232板卡实现指导（以PCI8432/4为例）</p>
+<p><a href="Simpole_PCI8433.html">RS422/RS485  Implementation Guide </a>NI公司的RS232板卡实现指导（以PCI8433/4为例）</p>
+<p>&nbsp;</p>
+<br>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+<th   scope="col">
+<div align="left"></div>
+</th>
+
+
+<th   scope="col">
+<div align="right">
+RS232 Implementation Guide
+ <a href="Simpole_PCI8432.html">
+<img class="tailimg"src="images/b_next.gif" width="17" height="17" ></a> 
+</div>
+</th>  
+  </tr>
+</table>
+
+<span class="copyright">&copy; Simpole</span>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="19044113-2219-4f2f-8327-4d4352b6d21b" simVersion="2.0" data="Fri Mar 08 19:32:23 CST 2024" type="http://simpole/dataDictionary.xml">
+  <model name="demo2" id="95f845ad-29fa-499d-a5fa-30150988377c">
+    <variable name="VarLook" offset="143" length="8" dataType="double" referenced="demo2/VarLook" mode="0"/>
+    <variable name="Varset" offset="130" length="8" dataType="double" referenced="demo2/Varset" mode="0"/>
+    <variable name="paramLook" offset="156" length="8" dataType="double" referenced="demo2/paramLook" mode="0"/>
+  </model>
+</project>

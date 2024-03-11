@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpole_AEC1553_Hardware_Reference</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">Simpole<sup>&reg;</sup>
+    </td>   
+     <th width="4%" class="tableFont" scope="col">
+<a href="Simpole_AEC1553_SimpoleD_Reference.html"><img class="topimg" src="images/b_prev.gif"  ></a></th> 
+
+
+       
+<th width="3%" class="tableFont" scope="col">
+</th>
+  </tr>
+</table>
+<h1>AEC1553 Hardware Reference（AEC1553 硬件参考）
+</h1>
+<p>此1553板卡为北京神州飞航科技有限责任公司的AEC1553板卡。AEC1553-PMC-FBC31RT-2/S5是一款1553总线通讯板卡，PMC总线，双通道（双冗余）多功能MIL-STD-1553通讯卡。本节依据北京神州飞航科技有限责任公司的相关资料，结合在Simpole中的应用，介绍1553板卡的硬件信息。 </p>
+<p>&nbsp;</p>
+<p>具体内容如下：</p>
+<p><a href="#board_summarize">板卡概述</a></p>
+<p><a href="#board_shape">板卡外形</a></p>
+<p><a href="#GE1553_board_connection">AEC1553 板卡接线</a></p>
+<p><a href="#GE1553_Board_Handbook">AEC1553 Board 手册</a></p>
+
+<hr>
+<h2><a name="board_summarize">板卡概述</a></h2>
+<p>AEC1553板卡是北京神州飞航科技有限责任公司的遵循1553协议规范的通信板卡。AEC1553-PMC-FBC31RT-2/S5是一款1553总线通讯板卡，PMC总线，双通道（双冗余）多功能MIL-STD-1553通讯卡。其强大的功能能够满足不同用户的工业测量和自动化控制需求，良好的兼容性适用于各类系统配置。 该板具有BC/RT/MT 一体化特征通过软件编程可选择该板工作在总线控制器（BC）、 远程终端（RT）或总线监视器（MT）模式。 </p>
+<h2><a name="board_shape">板卡外形</a></h2>
+<p>AEC1553板卡外形图如下图所示。</p>
+<p>&nbsp;</p>
+<img src="images/1553_1.png" width="512" height="321">
+<h2><a name="GE1553_board_connection">AEC1553 板卡接线</a></h2>
+<p>AEC1553板卡有2个通道共4个接口：第一通道BusA，第一通道BusB，第二通道BusA，第二通道BusB。各个接线端口之间通过专用的1553连接线缆或耦合器连接，进行数据通信。</p>
+<p>AEC1553板卡根据GUI界面的通道号，将1553板卡的A\B通道通过专用的1553连接线直接连接或者通过耦合器连接。专用的1553连接线和耦合器分别如下图所示。</p>
+<p><img   src="images/GE1553_Hardware_Reference_connect1.gif"  >
+  
+  
+<img  width="25%" src="images/GE1553_Hardware_Reference_connect2.jpg"  ></p>
+<p>功能结构图如下所示：</p>
+<p><img src="images/1553_2.png" width="928" height="446"> </p>
+<h2><a name="GE1553_Board_Handbook">AEC1553 Board 手册</a></h2>
+<p>BC模式： </p>
+<ul>
+  <li>自动BC重试，次数可选（1~2次）；重试通道可选 </li>
+  <li>支持事件消息、周期消息，分辨率1ms </li>
+  <li>消息间间隔可设，分辨率1&#956;s </li>
+  <li>提供中断和查询两种消息读取方式 </li>
+  <li>采用链表的方式来管理消息，可以动态插入或修改事件消息 </li>
+  <li>使能RTC功能后，可自动发送RTC时钟值 </li>
+  <li>支持消息的顺序读取和刷新读取 </li>
+  <li>4K &#215; 48 &#215; 16bit数据空间 </li>
+  <li>4K &#215; 8 &#215; 16bit命令字空间 </li>
+  <li>中断方式下可缓存2000条最新消息 </li>
+  <li>查询方式下最少可缓存80条最新消息 </li>
+</ul>
+<p>RT模式：</p>
+<ul>
+  <li>0~31个RT </li>
+  <li>非法命令表功能 </li>
+  <li>RT矢量字与子地址对应，用来刷新子地址事件消息 </li>
+  <li>提供中断和查询两种消息读取方式 </li>
+  <li>使能RTC功能后，RT自动计算BC与RT系统时差 </li>
+  <li>单缓冲和循环缓冲数据发送方式，每个子RT的数据缓存可到4K &#215; 16bit </li>
+  <li>循环缓冲数据接收方式，缓冲区大小：1M &#215; 16bit </li>
+  <li>中断方式下可缓存128条发送数据消息及128条接收数据消息 </li>
+  <li>查询方式下可缓存4K条发送数据消息及4K条接收数据消息 </li>
+  <li>运行中可随时读取RT下的某个子RT接收到最新数据 </li>
+</ul>
+<p>MT模式：</p>
+<ul>
+  <li>命令字过滤功能 </li>
+  <li>查询方式读取消息 </li>
+  <li>采用循环缓冲接收数据 </li>
+  <li>1M &#215; 16bit的数据区 </li>
+  <li>可缓存128K条最近监控到的消息</li>
+</ul>
+<p>以上简要给出一些AEC1553 板卡信息，详细内容请参看相关pdf文档。
+</p>
+<br>
+
+
+
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+
+ <th   scope="col"><div align="left"><a href="Simpole_AEC1553_SimpoleD_Reference.html"><img class="tailimg"src="images/b_prev.gif"  ></a>AEC1553 SimpoleD Reference</div></th>
+    
+<th   scope="col">
+<div align="right">
+
+  </div>
+</th>   
+
+  </tr>
+</table>
+
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>

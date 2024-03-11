@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--本文件用于描述当前测试项目用到的全部用例-->
+<!--Command 指令字包括：setData、send、wait、receive、compare、start、stop、wiring、DeviceCTLStep、simpole-->
+<!--setData       = 以域为单位设置待发送数值-->
+<!--send          = 以ICD为单位发送-->
+<!--wait          = 等待ms-->
+<!--receive       = 以ICD为单位接收-->
+<!--compare       = 以域为单位进行数值对比-->
+<!--start         = 启动模型或者曲线-->
+<!--stop          = 停止已经启动的模型-->
+<!--simpole       = simpole模型调用-->
+<!--wiring        = 配线设备控制-->
+<!--DeviceCTLStep = 自定义设备控制-->
+<!--chnInfo 通道信息包括：板卡类型、板卡序号、通道序号-->
+<!--ICDField 域信息包括：icdUUID、域UUID-->
+<autoTest version="1.0" name="CaseInfo">
+    <caseRoot Name="NO.1" Alias="None" IP="192.168.1.120">
+        <case CaseID="afd8b38e-a026-4c01-8aac-947dfa2de763" Name="552" StepNum="12">
+            <step StepID="bf5dd4c8-7e34-4204-9fd9-7b80d4539137" StepName="新建指令" Row="1" Command="start" Type="continue">
+                <subStep SubStepID="ea7a69b0-609f-4582-bdc2-9ddade930795" Dll="libJYPXIe552.so" ModelName="JYPXIe552" PeriodMs="200" Type="termination" Times="100000" modelSource="autoTest">
+                    <parameter>
+                        <param Name="Constant_Value" DataType="double" Length="8" Value="1.0" Referenced="JYPXIe552/Digital/JY 5510 DIO/Constant" Offset="0" />
+                    </parameter>
+                    <output>
+                        <var Name="Shared Memory Set" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set" DataType="double" Lenght="8" />
+                        <var Name="Shared Memory Set1" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set1" DataType="double" Lenght="8" />
+                    </output>
+                    <input>
+                        <var Name="Shared Memory Get" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Get" DataType="double" Lenght="8" />
+                    </input>
+                </subStep>
+            </step>
+            <step StepID="8db404fd-e5df-492e-b37e-5b04622b99c7" StepName="新建指令" Row="2" Command="wait" timeMS="2000" timeUS="0" />
+            <step StepID="b996a4e5-55ba-473f-a964-5230ccda1727" StepName="新建指令" Row="3" Command="compare" Expectation="1" UpperLimit="0" LowLimit="0">
+                <model Name="Shared Memory Set" Type="var" DataType="double" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set" />
+            </step>
+            <step StepID="dd58ced7-5f81-43fc-8cad-16c2abfded82" StepName="新建指令" Row="4" Command="compare" Expectation="0" UpperLimit="0" LowLimit="0">
+                <model Name="Shared Memory Set1" Type="var" DataType="double" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set1" />
+            </step>
+            <step StepID="8a6eb550-ae7f-42c7-b96c-bc47744d02c2" StepName="新建指令" Row="5" Command="wait" timeMS="2000" timeUS="0" />
+            <step StepID="dced6789-cbae-46fa-8cc3-0c7c61eec7d7" StepName="新建指令" Row="6" Command="setData" Value="2">
+                <model Name="Shared Memory Get" Type="var" DataType="double" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Get" />
+            </step>
+            <step StepID="606b34d3-2c32-4166-9567-898eb6d77342" StepName="新建指令" Row="7" Command="setData" Value="3">
+                <model Name="Constant_Value" Type="param" DataType="double" Referenced="JYPXIe552/Digital/JY 5510 DIO/Constant" />
+            </step>
+            <step StepID="5294f24d-352c-4564-88a3-2efcc0f447ab" StepName="新建指令" Row="8" Command="wait" timeMS="2000" timeUS="0" />
+            <step StepID="5b1df7dc-f08b-4001-a74f-044126f56b05" StepName="新建指令" Row="9" Command="compare" Expectation="3" UpperLimit="0" LowLimit="0">
+                <model Name="Shared Memory Set" Type="var" DataType="double" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set" />
+            </step>
+            <step StepID="6008c9a6-2b88-4ea5-984d-60231e09ad59" StepName="新建指令" Row="10" Command="compare" Expectation="2" UpperLimit="0" LowLimit="0">
+                <model Name="Shared Memory Set1" Type="var" DataType="double" Referenced="JYPXIe552/Digital/JY 5510 DIO/Shared Memory Set1" />
+            </step>
+            <step StepID="d68493ce-06c4-47c1-95d6-5c022c76aabb" StepName="新建指令" Row="11" Command="wait" timeMS="2000" timeUS="0" />
+            <step StepID="975424c4-aa8c-4ef7-8fed-0480cb31afd1" StepName="新建指令" Row="12" Command="stop">
+                <model ModelName="JYPXIe552" Dll="libJYPXIe552.so" />
+            </step>
+        </case>
+    </caseRoot>
+</autoTest>

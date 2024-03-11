@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--本文件用于描述当前项目的ICD、用例序列（读写命令时包含绑定关系，且全部参与读写的ICD都需要存储）-->
+<!--step Command="setData send wait receive compare"-->
+<!--step setData Type="double float int short char "-->
+<!--step setSignal stepPara Type="sine square ..."-->
+<!--step compare Expectation UpperLimit LowLimit-->
+<!--chnInfo BusType 422 1553 429-->
+<!--ICDField Type="fixData enum bool double float int short label character unicode string"-->
+<autoTest version="1.0" name="ICDInfo">
+    <icdRoot name="ICDInfo" uuid="20fa8619-18da-4288-9fb9-ea5893538f29">
+        <blocks xsi:type="discrete_1:Discrete" relations="93e68769-2e67-4f71-8fe9-bcb3f7b371bf" name="discreteSignal_00" uuid="00bf1ad6-674f-4b65-a62f-6ee2c8e5b910" description="" shortName="discreteSignal_00" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="analog_1:Analog" relations="88e5262b-970d-4f53-8df1-a5bcb20c7a94" name="analogSignal_01" uuid="0291f2c8-1248-4f52-800f-e26e7a96135c" shortName="analogSignal_01" netId="" source="" scale="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="" name="signal422_07" uuid="029f52a8-abbe-4dbc-b9a8-8e576d89da5d" shortName="signal422_5_2" netId="" source="" size="5" endianType="">
+            <fields xsi:type="icd:FloatField" name="Float" uuid="6d4b2ef8-9bc9-4056-858e-e04979ea8f68" description="" shortName="float1" offset="" size="32" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="26b357f9-9176-4644-ad53-3055b4c9f8bf" description="" shortName="fix1" offset="32" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="can_1:CANBlock" relations="1dsseb82-3df6-4577-9e9e-2cbb0aa8d1ab" name="CanMessage_00" uuid="08b044c3-6d60-473e-b8d7-b808b2b629b9" description="" shortName="CanMessage_8_1" netId="" endianType="LITTLE_ENDIAN" size="8" frameId="" frameType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="9865f03c-5c3d-4abd-9102-1d7baceafac6" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="a6c983f4-5777-4c5c-8c34-bca9b41601c7" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="f1a8cc15-4b0c-47ef-9c68-76f75bca68e6" description="" shortName="int1" offset="48" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="fd832a47-e042-4d9d-9161-ee776f6af217" description="" shortName="fix2" offset="56" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_02" uuid="0cd243cb-c094-40c5-947e-1c044e6f8014" description="" shortName="discreteSignal_02" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="" name="signal422_00" uuid="0df8f3de-53cf-4604-9365-3a824a8ad3a3" shortName="signal422_6_1" netId="" source="" size="6" endianType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="060c9e47-adcd-4e7d-8d83-24cb3d37b08d" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="7e3ca938-30ff-47b7-ad03-02f5287c6581" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_04" uuid="12c9e28e-399f-428e-8111-5537e5adb6fb" description="" shortName="discreteSignal_04" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_05" uuid="1353a92b-71a6-4c10-804f-1c7ce2bd4e50" shortName="M1553BSignal_6_2" netId="" source="" size="6" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="a7de4f90-6c8b-4bcc-8b48-48ee2f46f228" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="95ce209d-a024-45d2-a807-7b9b35d83bd7" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_06" uuid="16b17cdb-793c-4781-878a-1fcac8e4a385" shortName="analogSignal_06" netId="" source="" scale="" />
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_08" uuid="1cf87b7b-5041-44fe-b9ce-6abf029b30d1" description="" shortName="discreteSignal_08" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_12" uuid="1da5a93a-f8d1-4ed2-b0e1-97e344d4f428" shortName="analogSignal_12" netId="" source="" scale="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_05" uuid="20ed5e68-99b7-48ee-8ebf-6a518a243a00" shortName="analogSignal_05" netId="" source="" scale="" />
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_00" uuid="21d1c20f-497d-4fc2-a64b-bf92fb5399f2" shortName="M1553BSignal_2_1" netId="" source="" size="2" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="5ce3df80-bf65-436a-964b-45f9f5b3a7b6" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="analog_1:Analog" relations="f7d59662-39d2-402b-a753-5f74ee7379d8" name="analogSignal_15" uuid="22dc3b54-1fbe-4077-845a-48c8e621eb1c" shortName="analogSignal_15" netId="" source="" scale="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="" name="signal422_01" uuid="25815f01-0895-4789-8b5a-293f5f822059" shortName="signal422_6_2" netId="" source="" size="6" endianType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="01e8b439-05e5-480a-adea-638b1a0f8d17" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="35bcbf8c-56e7-46a9-9d36-00ec4a50190a" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_03" uuid="35dfa271-03ee-415d-a062-ab089ac55cd3" shortName="analogSignal_03" netId="" source="" scale="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_08" uuid="37234508-caa9-4a40-8e39-80f25383344b" shortName="analogSignal_08" netId="" source="" scale="" />
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_03" uuid="3bdff745-d007-48ce-a450-63d7d4ffb43e" shortName="M1553BSignal_2_4" netId="" source="" size="2" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="84f3b233-fe7d-472e-9393-77cd1d4a0cc6" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_13" uuid="5a44f335-0cdc-4ffd-877c-c01b716f6c48" shortName="analogSignal_13" netId="" source="" scale="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_10" uuid="5c69f435-49db-47b0-b69c-f57f49f1688b" shortName="analogSignal_10" netId="" source="" scale="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_07" uuid="6d7b479f-7a36-4f58-ab29-900c12a3f0e4" shortName="analogSignal_07" netId="" source="" scale="" />
+        <blocks xsi:type="b1553:B1553Block" relations="f7d59662-39d2-402b-a753-5f74ee7379d8" name="M1553BSignal_04" uuid="6e235465-41fe-4e8c-9b1e-fa78591751d8" shortName="M1553BSignal_6_1" netId="" source="" size="6" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="7757c60e-d531-4e74-9231-3023e37f4ca5" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="cd761be4-44e9-4cff-b20a-891a7cd6a623" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="rs422_1:RS422Block" relations="4b3431fe-8f26-471b-b81d-4085b727cfd1" name="signal422_03" uuid="756f9a66-dbdc-4eda-ae16-96251aba1e31" shortName="signal422_8_2" netId="" source="" size="8" endianType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="df3a2b9a-358a-44a6-adf0-6badbe0218ec" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="c7e20296-6a91-4f70-b9d3-130ec61e0a0b" description="" shortName="int1" offset="16" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="3bd5b08f-ac51-49cb-9dfe-e4621e119561" description="" shortName="float1" offset="24" size="32" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="26981cdc-c196-4e3b-986d-bdd1aa3f25a7" description="" shortName="fix2" offset="56" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="rs422_1:RS422Block" relations="dd4d6a6e-fa7a-440b-99b6-0ee81b588339" name="signal422_02" uuid="7a89c16b-6b41-4980-ba72-8b01fa35a4b9" shortName="signal422_8_1" netId="" source="" size="8" endianType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="3d42177a-2f94-42f3-9076-f045c5c73b9b" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="bd2a83eb-6132-4444-83d5-0f1c56cdfaa9" description="" shortName="int1" offset="16" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="0ef36bf8-de43-442a-86f9-ede877b082b6" description="" shortName="float1" offset="24" size="32" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="ac731e92-19a3-45b0-bda6-ff0eb2ec8b7c" description="" shortName="fix2" offset="56" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="b1553:B1553Block" relations="b987689c-6ca1-40c7-afff-a04ce95197f4" name="M1553BSignal_06" uuid="7ce9d91b-a394-47b1-9316-c12ba975ee14" shortName="M1553BSignal_8_1" netId="" source="" size="8" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="f14fc486-2bce-49a9-9df5-032151308bc4" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="34043f54-a7ff-4434-8446-72261d0c302c" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="a2fe2c35-ec06-4b96-8bd6-75e83eb9028d" description="" shortName="int1" offset="48" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="15369eed-59ea-446f-abfe-1a8373b4aa20" description="" shortName="fix2" offset="56" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="can_1:CANBlock" relations="" name="CanMessage_08" uuid="7ecd01be-9209-488d-a6d5-00052bfe2d33" description="" shortName="CanMessage_08" netId="" endianType="LITTLE_ENDIAN" size="8" frameId="" frameType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="b1e17a5a-75ac-438b-8c71-f3dc3cfaaf68" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="346b7719-cee7-4610-93bd-67b017183a39" description="" shortName="fix2" offset="16" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="4ee7b288-2667-430f-a6c8-912f562fdd63" description="" shortName="fix3" offset="32" size="32" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_06" uuid="7fe1c87d-6a5f-44b5-a060-e5fd72b059f0" description="" shortName="discreteSignal_06" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="4b3431fe-8f26-471b-b81d-4085b727cfd1" name="signal422_09" uuid="803a531e-16ad-4a40-b39c-b60ad6ac3dd9" shortName="signal422_4_2" netId="" source="" size="4" endianType="">
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="b3e4103a-6e3e-4e42-ac33-ba4d2aaa124b" description="" shortName="int1" offset="" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="a49e9d50-a417-40ba-bef9-7d766629a449" description="" shortName="fix1" offset="8" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="dfaf85ed-98cb-4222-b8f7-8fd3f42d845d" description="" shortName="int2" offset="24" size="8" defaultValue="0" signed="" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_07" uuid="81669b0e-d534-4c43-b8c8-2c1e62cc5d29" description="" shortName="discreteSignal_07" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_01" uuid="857bd861-25dc-4a53-ab67-07cdc08908dd" description="" shortName="discreteSignal_01" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="analog_1:Analog" relations="91866066-c222-4a34-8ec8-727351c88ee2" name="analogSignal_00" uuid="85892194-c84f-413d-8911-5fd33ca5a83f" shortName="analogSignal_00" netId="" source="" scale="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_14" uuid="85e6c81c-81c7-4e66-a0ea-8d7966eb3ef7" shortName="analogSignal_14" netId="" source="" scale="" />
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_03" uuid="91e59934-b1e2-423c-beb6-63ff8fe45c64" description="" shortName="discreteSignal_03" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_09" uuid="9452a1ae-dcc6-4b88-8c82-0517b0172db1" shortName="M1553BSignal_4_2" netId="" source="" size="4" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="5d393970-e92b-41ae-abc1-91623ec35266" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="3f206a88-3ad0-47de-9ad0-20965f3c2c4f" description="" shortName="fix2" offset="16" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_14" uuid="9e1d5d59-bb23-42c3-ae23-dc47ba128edc" description="" shortName="discreteSignal_14" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_11" uuid="9e28c5c0-77ec-4505-9d42-116f4fe20c87" shortName="analogSignal_11" netId="" source="" scale="" />
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_02" uuid="9f4eb3fa-a5c6-465c-8647-adc39be0c27c" shortName="M1553BSignal_2_3" netId="" source="" size="2" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="8e3d411c-638a-415b-b9c9-bec49bfa2e21" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_05" uuid="a0941788-72ad-4957-8672-1d9cc22b9cfe" description="" shortName="discreteSignal_05" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="analog_1:Analog" relations="1dffeb82-3df6-4577-9e9e-2cbb0aa8d1ab" name="analogSignal_02" uuid="a5d02a76-9f4f-4e9a-b417-a07e998f82f5" shortName="analogSignal_02" netId="" source="" scale="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="" name="signal422_04" uuid="b0285a06-7836-4c0f-b484-7b5de5389ba7" shortName="signal422_7_1" netId="" source="" size="7" endianType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="7a4daeb4-f174-4943-abd1-805223c8a807" description="" shortName="fix1" offset="" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="4151ecc9-96c8-4b20-aaf5-39d900999325" description="" shortName="float1" offset="8" size="32" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="39c3bdde-69c0-4b21-bfb7-d858f37f0c38" description="" shortName="int1" offset="40" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="39250fc0-f8c2-4cab-ba4c-a4eecb681b62" description="" shortName="fix1" offset="48" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="can_1:CANBlock" relations="f7d59662-39d2-402b-a753-5f74ee7379d8" name="CanMessage_09" uuid="bdb392bc-175a-478d-b11f-f17c28aa1644" description="" shortName="CanMessage_09" netId="" endianType="LITTLE_ENDIAN" size="8" frameId="" frameType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="e4bb92fa-d318-4932-84e6-09a2beac6364" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="fc7d21d5-cd4e-448c-8fa2-00e9b4e8f5dc" description="" shortName="fix2" offset="16" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="3ef24574-b104-4a6f-b851-78ad4ed23ade" description="" shortName="fix3" offset="32" size="32" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_08" uuid="c27eaf20-88f6-4e10-af98-de4d1e95e0e7" shortName="M1553BSignal_4_1" netId="" source="" size="4" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="5e236524-4cf0-40aa-b9b4-15a54e8f4299" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="367c3826-ca97-4f07-ba61-b7da754ba58a" description="" shortName="fix2" offset="16" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="b1553:B1553Block" relations="" name="M1553BSignal_01" uuid="c623ab3c-b673-45cb-8284-18efcbc2afaf" shortName="M1553BSignal_2_2" netId="" source="" size="2" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="0517d783-1b57-4866-9b4c-971f24e9f7b4" description="" shortName="fix2" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="b1553:B1553Block" relations="ca6a60c1-2ef3-47c3-827c-385bc424ce6f" name="M1553BSignal_07" uuid="ca4095bf-a2cb-4b57-8d47-1715c6ab4f23" shortName="M1553BSignal_8_2" netId="" source="" size="8" endianType="" dstAdd="" dstSubAdd="" srcAdd="" msgType="" messageID="" period="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="93a7f013-dd0f-4e5a-a534-2dd8a00d2390" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="d1bd5695-5e29-42eb-bdba-120ba8d36c5c" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="564a97d6-44da-4299-8dde-258393208154" description="" shortName="int1" offset="48" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="53d9ec0f-d093-4e1b-85a0-d683d9bd90e6" description="" shortName="fix1" offset="56" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_10" uuid="cc875d36-dce9-479e-90af-d955a2365fdc" description="" shortName="discreteSignal_10" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="f7d59662-39d2-402b-a753-5f74ee7379d8" name="signal422_05" uuid="cfb864f1-1ab2-42ed-a889-19eba7b35ba1" shortName="signal422_7_2" netId="" source="" size="7" endianType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="697193c5-4da6-447b-85ce-8ea1579389b9" description="" shortName="fix1" offset="" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="09f3275a-1d01-4cfc-b8c8-5e4478f65c8c" description="" shortName="float1" offset="8" size="32" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="2374da64-78ac-4e03-a0d7-fc31adffb98d" description="" shortName="int1" offset="40" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="7689c6f8-5f9a-4f0c-a79d-da25e70ae0ee" description="" shortName="fix2" offset="48" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="can_1:CANBlock" relations="f2bb20a6-8905-4629-8a15-45a985daa61a" name="CanMessage_01" uuid="cfcbb7e5-83f2-42b0-ab4f-9b840ebff460" description="" shortName="CanMessage_8_2" netId="" endianType="LITTLE_ENDIAN" size="8" frameId="" frameType="">
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="8110c09f-0f5f-42bb-8048-1952965b5c7c" description="" shortName="fix1" offset="" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:FloatField" name="Float" uuid="947dfe1c-d657-42d2-8d4b-8d723e648409" description="" shortName="float1" offset="16" size="32" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="4fc51a7c-4643-42fd-8449-6f0474b7f740" description="" shortName="int1" offset="48" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="26d93425-cc71-4564-b85b-d3da5dd81799" description="" shortName="fix2" offset="56" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="f7d59662-39d2-402b-a753-5f74ee7379d8" name="discreteSignal_15" uuid="d13f215d-f20a-4d95-bfec-4e1577755346" description="" shortName="discreteSignal_15" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_09" uuid="d220fba4-0b08-4958-aeb4-047c07024ca5" shortName="analogSignal_09" netId="" source="" scale="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="dd4d6a6e-fa7a-440b-99b6-0ee81b588339" name="signal422_08" uuid="d44a64e4-192a-4873-adeb-77d97eef27b5" shortName="signal422_4_1" netId="" source="" size="4" endianType="">
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="e3e3236f-f7ff-4cb6-a6ba-6a6240b510e5" description="" shortName="int1" offset="" size="8" defaultValue="0" signed="" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="e821a531-436a-4ed2-b1e8-190f964dda89" description="" shortName="flix1" offset="8" size="16" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+            <fields xsi:type="icd:IntegerField" name="Integer" uuid="cae78171-5ce7-491a-a313-e94212fe39ad" description="" shortName="int2" offset="24" size="8" defaultValue="0" signed="" />
+        </blocks>
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_12" uuid="e3def839-3f37-4cd4-b36a-ff8c540dc736" description="" shortName="discreteSignal_12" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_13" uuid="e7810f0d-c60a-4e82-98e5-c3ac6a59de2b" description="" shortName="discreteSignal_13" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_09" uuid="eb773b56-197c-4e80-a543-5b3c41b2c4bd" description="" shortName="discreteSignal_09" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="discrete_1:Discrete" relations="" name="discreteSignal_11" uuid="eba44cc3-fab6-4e78-8017-7dbc8b1fd0c9" description="" shortName="discreteSignal_11" netId="" source="" defaultValue="1" mean1="" mean0="" />
+        <blocks xsi:type="rs422_1:RS422Block" relations="" name="signal422_06" uuid="f767a7af-bbda-44c9-86c2-92093dc507ea" shortName="signal422_5_1" netId="" source="" size="5" endianType="">
+            <fields xsi:type="icd:FloatField" name="Float" uuid="ebcda8a0-569c-48c1-b534-36d66c5024b5" description="" shortName="float1" offset="" size="32" defaultValue="0" />
+            <fields xsi:type="icd:FixdataField" name="Fixdata" uuid="97a6cb68-8ec6-4057-8944-fa8281800ba4" description="" shortName="fix1" offset="32" size="8" maxValue="" minValue="" signed="" lsb="1" offsetValue="0" defaultValue="0" />
+        </blocks>
+        <blocks xsi:type="analog_1:Analog" relations="" name="analogSignal_04" uuid="fbbe59d0-2bf4-405b-ac2a-5f85192da2b4" shortName="analogSignal_04" netId="" source="" scale="" />
+    </icdRoot>
+</autoTest>

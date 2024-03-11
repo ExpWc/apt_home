@@ -1,0 +1,211 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpole_AEC1553_SimpoleD_Reference</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">Simpole<sup>&reg;</sup>
+    </td>   
+     <th width="4%" class="tableFont" scope="col">
+<a href="Simpole_AEC1553_Features.html"><img class="topimg" src="images/b_prev.gif" ></a></th> 
+
+
+       
+<th width="3%" class="tableFont" scope="col">
+ <a href="Simpole_AEC1553_Hardware_Reference.html">
+<img class="topimg"src="images/b_next.gif"  ></a> </th>
+  </tr>
+</table>
+<h1>AEC1553 SimpoleD Reference （AEC1553 SimpoleD 参考）</h1>
+<p >
+ 1553实时驱动（SimpoleD）是1553 板卡与系统模型的接口。
+本节内容介绍1553 SimpoleD库的功能、配置。
+</p>
+
+<p>&nbsp;</p>
+<p>具体内容如下：</p>
+
+<p><a href="#HBMF1553_RTD_summarize">AEC1553 SimpoleD 库概述</a></p>
+<p><a href="#HBMF1553_RTD_Module">AEC1553 SimpoleD 库模块</a></p>
+
+
+<hr>
+<h2><a name="HBMF1553_RTD_summarize">AEC1553 SimpoleD 库概述</a></h2>
+<p>
+1553板卡的SimpoleD库提供了各个相关功能SimpoleD模块，用于在simulink模型中实现1553协议的Bus Controller（BC）、Bus Monitor（BM）和Remote Terminal（RT）功能。
+</p>
+
+<p>右键单击Open 1553 library，从菜单中打开AEC1553各个模块：
+</p>
+<p><img src="images/1553_3.png" width="711" height="655"></p>
+<h2><a name="HBMF1553_RTD_Module">AEC1553 SimpoleD 库模块</a></h2>
+<p>Bus Controller、Remote Terminal、Bus Monitor的各个模块的设置使用如下:  </p>
+<ul>
+<li><a href="#1553_Init">AEC1553 Init </a><a href="#1553_Create_BC_List"></a></li>
+<li><a href="#1553_Message_Define">AEC1553  Message Define
+ </a></li>
+<li><a href="#1553_Controller">AEC1553 Controller
+
+ </a> </li>
+<li><a href="#1553_BC_Send/Secv">AEC1553 BC Send/Recv
+
+ </a></li>
+ <li><a href="#1553_RT_Send/Recv">AEC1553 RT Send/Recv </a><a href="#1553_Init"></a> </li>
+ <li><a href="#1553_BM_Recv">AEC1553 BM Recv
+
+ </a></li>
+</ul>
+<p>注意：在执行模型时，AEC1553 Init、AEC 1553 Message Define的执行顺序为先执行AEC1553 Init，再执行AEC 1553 Message Define。在搭建模型时，需要将上述两类模块按照其先后顺序进行命名（按照ASCII码中的顺序），默认的名字“AEC1553 Init”和“AEC1553 Message Define”能保证AEC1553 Init在AEC 1553 Message Define之前执行（I在M之前）。若需要修改上述两个模块的名称，需保证修改后的模块名称满足上述规则。 </p>
+<h3><a name="1553_Init" id="1553_Init"> AEC1553 Init</a></h3>
+<p><img src="images/1553_4.PNG" width="209" height="121"> </p>
+<h3>模块功能</h3>
+<p>1553板卡工作模式初始化设置，配置选择板卡号、通道号（及BC、RT、BM工作模式使能）、应答超时、采样时间、RT编号等。 </p>
+<h3>输入输出端口 </h3>
+<p><strong>无。</strong></p>
+<h3>参数配置</h3>
+<p>1553 Init 模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/1553_5.png" width="406" height="488"><img src="images/1553_6.png" width="406" height="488"></p>
+<p>&nbsp;</p>
+<p><strong>BoardNo</strong>：选择板卡号，范围为1至16；若系统中安装了多块同一类型的1553板卡，用Board Number进行区分和访问； </p>
+<p><strong>CHN1</strong>：设置是否使能通道1，及对应的BC、RT、BM工作模式； </p>
+<p><strong>CHN2</strong>: 设置是否使能通道2，及对应的BC、RT、BM工作模式； </p>
+<p><strong>ResponseTimeout(us)</strong>：设置应答超时；</p>
+<p><strong>SampleTi</strong>：设置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长； </p>
+<p><strong>RTEbable</strong>：若使能了某通道的RT，可选择对应的RT号；若通道未使能，则不能进行勾选。</p>
+<p>&nbsp;</p>
+<h3><a name="1553_Message_Define" id="1553_Message_Define">AEC1553 Message Define</a></h3>
+<p><img src="images/1553_7.PNG" width="206" height="125"></p>
+<h3>模块功能</h3>
+<p>对编码的报文进行定义。</p>
+<h3>输入输出端口 </h3>
+<p><strong>无。</strong></p>
+<h3>参数配置</h3>
+<p>1553 Message Define模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/1553_8.png" width="406" height="668"> </p>
+<p><strong>BoardNo:</strong>选择板卡号，范围为1至16；若系统中安装了多块同一类型的1553板卡，用Board Number进行区分和访问； </p>
+<p><strong>ChnNo</strong>：选择通道号，范围1至2； 
+</p>
+<p><strong>Msg ID（0-4094）：</strong>需要编码的报文的序号，范围0至4094。注：当模型中有多条报文时，报文号选择必须从0开始连续选择。例如，若有五条报文，则报文序号分别为0、1、2、3、4；</p>
+<p><strong>Transmit Type：</strong>传输方式。包含四种选项：BC-&gt;RT，RT-&gt;BC，RT-&gt;RT，MODE。若使用BC-&gt;RT模式，则Source RT控件和Source SubRT被禁能；若使用RT-&gt;BC模式，则Destination RT</p>
+<p>  控件和Destination SubRT控件被禁能；若使用MODE，仅Source RT使能；</p>
+<p><strong>Source RT</strong><strong>：</strong>源RT地址，选择范围0至31； </p>
+<p><strong>Source SubRT</strong><strong>：</strong>源RT子地址，选择范围0至31。若报文为方式命令报文，则子地址默认为0或31，Word Count不需要设置；</p>
+<p><strong>Destination RT</strong><strong>：</strong>目的RT地址，选择范围0至31，设为31时为广播地址；</p>
+<p><strong>Destination SubRT</strong><strong>：</strong>目的RT子地址，选择范围0至31； </p>
+<p><strong>ModeCode</strong><strong>：</strong>子地址为0或31时，可设置为16，实现RT非周期发送；</p>
+<p><strong>Word Count(1-32)</strong><strong>：</strong>需要发送或接收的short类型（16位）的字的数目；</p>
+<p><strong>Bus Type</strong><strong>：</strong>选择报文传输使用的总线（Bus A 、Bus B）；</p>
+<p><strong>Period Time</strong><strong>：</strong>周期时间。若输入非0，则此消息为周期消息，其周期为设置值；若输入0，则此消息为非周期消息；</p>
+<p><strong>Sample Time</strong><strong>：</strong>设置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。 </p>
+<p>&nbsp;</p>
+<p><strong>非周期消息建模说明</strong>：</p>
+<p>1、当BC向RT发送非周期消息时，需要将Message define模块中Transmit Type设置为BC-&gt;RT，并将Period Time（ms）设置为0。此时</p>
+<p>将按照仿真周期由BC向RT发送非周期消息（由BC Send中的Update参数控制消息的发送）；</p>
+<p>2、当RT向BC发送非周期消息时，需要将Message define模块中Transmit Type设置为RT-&gt;BC，并将Period Time（ms）设置为0。此外，</p>
+<p>还需额外增加一个Message define模块，将其Transmit Type设置为Mode，设置Period Time（ms），并保证仿真周期为Period Time</p>
+<p>（ms）的整数倍。此时将按照仿真周期由RT向BC发送非周期消息（由RT Send中的Update参数控制消息的发送）；</p>
+<p>3、当RT向RT发送非周期消息时，需要将Message define模块中Transmit Type设置为RT-&gt;RT，并将Period Time（ms）设置为0。此外，</p>
+<p>还需额外增加一个Message define模块，将其Transmit Type设置为Mode，设置Period Time（ms），并保证仿真周期为Period Time</p>
+<p>（ms）的整数倍。此时将按照仿真周期由RT向RT发送非周期消息（由RT Send中的Update参数控制消息的发送）；</p>
+<p>&nbsp;</p>
+<h3><a name="1553_Controller" id="1553_Controller">AEC1553 Controller</a></h3>
+<p><img src="images/1553_9.PNG" width="210" height="118"> </p>
+<h3>模块功能</h3>
+<p>控制模块设置。
+</p>
+<h3>输入输出端口 </h3>
+<p><strong>无。</strong></p>
+<h3>参数配置</h3>
+<p>1553 Controller模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/1553_10.png" width="406" height="338"></p>
+<p><strong>BoardNo:</strong>选择板卡号，范围为1至16；若系统中安装了多块同一类型的1553板卡，用Board Number进行区分和访问；</p>
+<p><strong>Sample Time</strong><strong>：</strong>设置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。 </p>
+<p>&nbsp;</p>
+<p>&nbsp;  </p>
+<p>&nbsp;</p>
+
+<h3><a name="1553_BC_Send/Secv" id="1553_BC_Send/Secv">AEC1553 BC Send/Recv</a></h3>
+<p><img src="images/1553_11.png" width="208" height="125"><img src="images/1553_12.png" width="198" height="122"></p>
+<h3>模块功能</h3>
+<p>BC发送接收模块设置。
+</p>
+<h3>输入输出端口</h3>
+<p><strong>Send</strong>：待发送的数据字(UINT16)，仅对BC-&#62;RT命令字有效，包含周期和非周期数据； </p>
+<p><strong>Update</strong>：更新数据标识(UINT32)，发送周期数据，Update&#62;0时更新发送数据，Update=0时不更新发送数据；发送非周期数据，Update&#62;0时触发发送数据，Update=0时不发送数据；</p>
+<p><strong>Recv</strong>：RT向BC发送的数据字(UINT16)，仅对RT-&#62;BC有效；</p>
+<p><strong>Cmd</strong>：RT向BC发送的命令字(UINT32)，仅对RT-&#62;BC有效；</p>
+<p><strong>Status</strong>：RT向BC发送的状态字(UINT32)，仅对RT-&#62;BC有效。</p>
+<h3>参数配置</h3>
+<p>1553 BC Send/Recv模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/1553_13.png" width="406" height="458"></p>
+<p><strong>BoardNo:</strong>选择板卡号，范围为1至16；若系统中安装了多块同一类型的1553板卡，用Board Number进行区分和访问； </p>
+<p><strong>ChannelNo</strong>：选择通道号，范围1至2； </p>
+<p><strong>Msg ID（0-4094）：</strong>需要发送或接收的报文的序号，范围0至4094。</p>
+<p><strong>Direction：</strong>取值为Send和Recv。设置为Send，仅显示输入端口；设置为Recv，仅显示输出端口；</p>
+<p><strong>DataLength：</strong>数据长度。本次通讯需要传输的数据字的个数（UINT16），取值范围1至32；输入时设置有效，输出时设置无效；</p>
+<p><strong>Sample time</strong><strong>：</strong>设置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。
+</p>
+<p>&nbsp;</p>
+
+<h3><a name="1553_RT_Send/Recv" id="1553_RT_Send/Recv">AEC1553 RT Send/Recv</a></h3>
+<p> <img src="images/1553_14.png" width="202" height="118"><img src="images/1553_15.png" width="199" height="118"></p>
+<h3>模块功能</h3>
+
+<p>RT发送接收模块设置。 </p>
+<h3>输入输出端口</h3>
+<p><strong>Send</strong>：RT待发送的数据字(UINT16)，仅对RT-&#62;BC、RT-&#62;RT命令字有效，包含周期和非周期数据、周期数据；</p>
+<p><strong>Update</strong>：更新数据标识(UINT32)，发送周期数据，Update&#62;0时更新发送数据，Update=0时不更新发送数据；发送非周期数据，Update&#62;0时触发发送非周期数据，设置矢量字，Update=0时不发送数据；</p>
+<p><strong>Recv</strong>：RT接收的数据字(UINT16)，仅对RT-&#62;RT、BC-&#62;RT有效；</p>
+<p><strong>Cmd</strong>：RT接收的命令字(UINT32)，仅对RT-&#62;RT、BC-&#62;RT有效；</p>
+<p><strong>Status</strong>：RT接收的状态字(UINT32)，仅对RT-&#62;RT、BC-&#62;RT有效。</p>
+<h3>参数配置</h3>
+<p>1553 RT Send/Recv模块的GUI配置界面如下图所示。</p>
+<p><img src="images/1553_16.png" width="406" height="488"></p>
+<p><strong>BoardNo:</strong>选择板卡号，范围为1至16；若系统中安装了多块同一类型的1553板卡，用Board Number进行区分和访问； </p>
+<p><strong>ChannelNo</strong>：选择通道号，范围1至2； </p>
+<p><strong>RT：</strong>RT地址，RT范围为0至31； </p>
+<p><strong>SubRT：</strong>RT子地址，SubRT 子地址范围为0至31；</p>
+<p><strong>Direction：</strong>取值为Send和Recv。设置为Send，仅显示输入端口，RT地址表示源地址；设置为Recv，仅显示输出端口，RT地址表示目的地址；</p>
+<p><strong>DataLength：</strong>数据长度。本次通讯需要传输的数据字的个数（UINT16），取值范围1至32；输入时设置有效，输出时设置无效；</p>
+<p><strong>Sampletime：</strong>设置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。</p>
+<h3><a name="1553_BM_Recv" id="1553_BM_Recv">AEC1553 RT Init</a></h3>
+<p><img src="images/1553_17.png" width="199" height="120"></p>
+<h3>模块功能</h3>
+<p>1553 BM接收模块设置。
+</p>
+<h3>输入输出端口</h3>
+<p><strong>Recv</strong>：BM接收的数据字(UINT16)；</p>
+<p><strong>Cmd</strong>：BM接收的命令字(UINT32)；</p>
+<p><strong>Status</strong>：BM接收的状态字(UINT32)。</p>
+<h3>参数配置</h3>
+<p>1553 BM Recv模块的GUI配置界面如下图所示。 </p>
+<p><img src="images/1553_18.png" width="406" height="518"> </p>
+<p><strong>BoardNo:</strong>选择板卡号，范围为1至16；若系统中安装了多块同一类型的1553板卡，用Board Number进行区分和访问； </p>
+<p><strong>ChnNo</strong>：选择通道号，范围1至2； </p>
+<p><strong>Transmit Type：</strong>传输方式。包含四种选项：BC-&gt;RT，RT-&gt;BC，RT-&gt;RT，MODE。若使用BC-&gt;RT模式，则Source RT控件和Source SubRT被禁能；若使用RT-&gt;BC模式，则Destination RT</p>
+<p> 控件和Destination SubRT控件被禁能；若使用MODE，仅Source RT使能；</p>
+<p><strong>Source RT</strong><strong>：</strong>源RT地址，选择范围0至31；</p>
+<p><strong>Source SubRT</strong><strong>：</strong>源RT子地址，选择范围0至31。若报文为方式命令报文，则子地址默认为0或31；</p>
+<p><strong>Destination RT</strong><strong>：</strong>目的RT地址，选择范围0至31，设为31时为广播地址； </p>
+<p><strong>Destination SubRT</strong><strong>：</strong>目的RT子地址，选择范围0至31；</p>
+<p><strong>Sample time</strong>：设置采样时间，数据可设置为-1或>0.0的任一数值。当设置为-1时，采样时间继承仿真步长。 
+<br>
+</p>
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+    <th   scope="col"><div align="left"><a href="Simpole_AEC1553_Features.html"><img class="tailimg"src="images/b_prev.gif" ></a>AEC1553 Features</div></th>
+    <th   scope="col"> <div align="right"> AEC1553 Hardware Reference <a href="Simpole_AEC1553_Hardware_Reference.html"> <img class="tailimg"src="images/b_next.gif" ></a> </div></th>
+  </tr>
+</table>
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>

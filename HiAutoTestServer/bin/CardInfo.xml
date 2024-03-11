@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--本文件用于描述当前项目的所有板卡配置详情-->
+<!--Type = "429 1553 422 discrete ai ao 1394"-->
+<!--板卡列表 = "板卡       型号               品牌  "-->
+<!--板卡列表 = "A429       HR_cPCI_3501/32    润科  "-->
+<!--板卡列表 = "1553B      HR_cPCI_1553B_2    润科  "-->
+<!--板卡列表 = "232        PXIe-8430/16       NI    "-->
+<!--板卡列表 = "RS422      PXIe-8431/16       NI    "-->
+<!--板卡列表 = "离散量输出 EP-H5121A-S2       恩菲特"-->
+<!--板卡列表 = "离散量输入 EP-H5121A-S3       恩菲特"-->
+<!--板卡列表 = "DA输出     PXI-6723           NI    "-->
+<!--板卡列表 = "AD采集     PXI-6224           NI    "-->
+<!--板卡列表 = "RVDT       cPCI-RVDT/LVDT-SIM 润科  "-->
+<autoTest version="1.0" name="CardInfo">
+    <cardRoot Name="NO.1" Alias="None" IP="192.168.1.120">
+        <card ID="5" Name="DIO" Type="discrete">
+            <parameter Name="CardType" Value="discrete" />
+            <parameter Name="LibVersion" Value="4.1.0" />
+            <parameter Name="SamplePeriod" Value="20" />
+            <channel ID="1" Name="CH-1" Alias="DIO_Rx#02_RK12010/CH-1" UUID="93e68769-2e67-4f71-8fe9-bcb3f7b371bf">
+                <busTable>
+                    <item UUID="00bf1ad6-674f-4b65-a62f-6ee2c8e5b910" Channel="1" Direction="Rx" Length="1" />
+                </busTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="DIO_Tx#02_RK12010/CH-2" UUID="7854b164-36bd-4a08-9a67-7ee3b61e65cd" />
+            <channel ID="3" Name="CH-3" Alias="DIO_Tx#02_RK12010/CH-3" UUID="e589ba68-125e-4993-b1d9-61db804af4eb" />
+            <channel ID="4" Name="CH-4" Alias="DIO_Tx#02_RK12010/CH-4" UUID="d4f6b17e-6f56-40ce-b91f-dd837fdd18b9" />
+            <channel ID="5" Name="CH-5" Alias="DIO_Tx#02_RK12010/CH-5" UUID="a60c76a8-60c1-4056-97e5-2a645c863189" />
+            <channel ID="6" Name="CH-6" Alias="DIO_Tx#02_RK12010/CH-6" UUID="c567bed1-564f-4c4d-85d6-6d853e3f5944" />
+            <channel ID="7" Name="CH-7" Alias="DIO_Tx#02_RK12010/CH-7" UUID="6eccac20-8914-4c19-bf6a-85ee97060c3b" />
+            <channel ID="8" Name="CH-8" Alias="DIO_Tx#02_RK12010/CH-8" UUID="61a66df5-42a8-4cf9-aa1e-08631e03587a" />
+            <channel ID="9" Name="CH-9" Alias="DIO_Tx#02_RK12010/CH-9" UUID="039d78c0-e266-4d4a-b6b8-612135534c1d" />
+            <channel ID="10" Name="CH-10" Alias="DIO_Tx#02_RK12010/CH-10" UUID="ee52f06d-de99-42c3-8165-454914dd0fe3" />
+            <channel ID="11" Name="CH-11" Alias="DIO_Tx#02_RK12010/CH-11" UUID="77f6419d-6fba-45a9-8b8f-6dbc6ba1d1ca" />
+            <channel ID="12" Name="CH-12" Alias="DIO_Tx#02_RK12010/CH-12" UUID="a886161e-3a61-418c-b5de-b7d721356466" />
+            <channel ID="13" Name="CH-13" Alias="DIO_Tx#02_RK12010/CH-13" UUID="b31cdade-6a6f-49c8-991a-2dd26d0de36b" />
+            <channel ID="14" Name="CH-14" Alias="DIO_Tx#02_RK12010/CH-14" UUID="29c5d419-2000-434b-ac55-cb2f7b83b048" />
+            <channel ID="15" Name="CH-15" Alias="DIO_Tx#02_RK12010/CH-15" UUID="120f8834-a974-4c0e-9c81-6bc4da62467a" />
+            <channel ID="16" Name="CH-16" Alias="DIO_Tx#02_RK12010/CH-16" UUID="77cbb4d0-e110-418b-9991-a5e69108e754" />
+            <channel ID="17" Name="CH-17" Alias="DIO_Tx#02_RK12010/CH-17" UUID="2f172b15-f6ed-41d6-b522-c8659f0563dc" />
+            <channel ID="18" Name="CH-18" Alias="DIO_Tx#02_RK12010/CH-18" UUID="ae113473-3d08-41c0-a960-4e8c64172615" />
+            <channel ID="19" Name="CH-19" Alias="DIO_Tx#02_RK12010/CH-19" UUID="332e8b4f-7d3d-42f5-b82d-2e50079024f2" />
+            <channel ID="20" Name="CH-20" Alias="DIO_Tx#02_RK12010/CH-20" UUID="ce9a2e40-8341-4efa-93cb-0ce35176b1e0" />
+            <channel ID="21" Name="CH-21" Alias="DIO_Tx#02_RK12010/CH-21" UUID="7598baae-96f5-4c02-83dd-2dde491e296e" />
+            <channel ID="22" Name="CH-22" Alias="DIO_Tx#02_RK12010/CH-22" UUID="32f360df-e6d3-4c1b-b5ad-db4bbb6a8f15" />
+            <channel ID="23" Name="CH-23" Alias="DIO_Tx#02_RK12010/CH-23" UUID="66d1cd3f-61ca-44ae-b8ae-4b55415f99ee" />
+            <channel ID="24" Name="CH-24" Alias="DIO_Tx#02_RK12010/CH-24" UUID="f3732eac-b718-48d5-822f-92204188d1cd" />
+            <channel ID="25" Name="CH-25" Alias="DIO_Tx#02_RK12010/CH-25" UUID="8b972722-e241-48a7-b27e-abb22d01924b" />
+            <channel ID="26" Name="CH-26" Alias="DIO_Tx#02_RK12010/CH-26" UUID="68b11159-fa5b-44e8-862c-ebed1c46c2b7" />
+            <channel ID="27" Name="CH-27" Alias="DIO_Tx#02_RK12010/CH-27" UUID="8949dbcb-eae7-4725-ba33-fadbad7de6d7" />
+            <channel ID="28" Name="CH-28" Alias="DIO_Tx#02_RK12010/CH-28" UUID="cc4c3f6c-b554-4bef-b7e1-16448167eb34" />
+            <channel ID="29" Name="CH-29" Alias="DIO_Tx#02_RK12010/CH-29" UUID="2ddfd087-55fe-4c94-8cf8-3030266bc745" />
+            <channel ID="30" Name="CH-30" Alias="DIO_Tx#02_RK12010/CH-30" UUID="e4a02f77-4576-4096-8a0a-fc096916d1e9" />
+            <channel ID="31" Name="CH-31" Alias="DIO_Tx#02_RK12010/CH-31" UUID="6aa5be79-ad89-48ba-b922-f4fbd0fdea9b" />
+            <channel ID="32" Name="CH-32" Alias="DIO_Tx#02_RK12010/CH-32" UUID="2a0e661c-d97c-4065-8241-167340db2336" />
+            <channel ID="33" Name="CH-33" Alias="DIO_Tx#02_RK12010/CH-33" UUID="eebba784-8aa4-43f7-b561-4f71d970d3d6" />
+            <channel ID="34" Name="CH-34" Alias="DIO_Tx#02_RK12010/CH-34" UUID="301caa2b-1e60-4a7a-94ef-07bf603a986a" />
+            <channel ID="35" Name="CH-35" Alias="DIO_Tx#02_RK12010/CH-35" UUID="32473ab3-35ca-45ab-8b89-ea4b55ce5f66" />
+            <channel ID="36" Name="CH-36" Alias="DIO_Tx#02_RK12010/CH-36" UUID="0e2d8c57-6d57-4b8e-8afa-0b9690495254" />
+            <channel ID="37" Name="CH-37" Alias="DIO_Tx#02_RK12010/CH-37" UUID="ddfae849-6907-4508-b6ba-1b4069703a26" />
+            <channel ID="38" Name="CH-38" Alias="DIO_Tx#02_RK12010/CH-38" UUID="22658552-aaaa-4d01-9d76-1ceb6a84ba14" />
+            <channel ID="39" Name="CH-39" Alias="DIO_Tx#02_RK12010/CH-39" UUID="ac757a6c-9ef2-41fb-84dc-b68978a6fdd3" />
+            <channel ID="40" Name="CH-40" Alias="DIO_Tx#02_RK12010/CH-40" UUID="a784d495-22f9-4fe3-8ae9-4b52fceb5a1e" />
+            <channel ID="41" Name="CH-41" Alias="DIO_Tx#02_RK12010/CH-41" UUID="66049ab3-10f5-4eca-82e4-480de8fb8f4e" />
+            <channel ID="42" Name="CH-42" Alias="DIO_Tx#02_RK12010/CH-42" UUID="9ee36406-989f-4aaa-a282-54b1750cf900" />
+            <channel ID="43" Name="CH-43" Alias="DIO_Tx#02_RK12010/CH-43" UUID="d68ef61c-0de3-48f4-b9f8-41c6f13b2d21" />
+            <channel ID="44" Name="CH-44" Alias="DIO_Tx#02_RK12010/CH-44" UUID="e8154533-d86d-4304-bb1e-d84d32754f13" />
+            <channel ID="45" Name="CH-45" Alias="DIO_Tx#02_RK12010/CH-45" UUID="b1985624-36e1-4a77-8e17-419ccb51a31b" />
+            <channel ID="46" Name="CH-46" Alias="DIO_Tx#02_RK12010/CH-46" UUID="480ba55e-7118-4be7-878c-7c5b289ff942" />
+            <channel ID="47" Name="CH-47" Alias="DIO_Tx#02_RK12010/CH-47" UUID="b03a85f0-98b8-4b9d-8966-a4c243ad2999" />
+            <channel ID="48" Name="CH-48" Alias="DIO_Tx#02_RK12010/CH-48" UUID="e837cceb-e2fb-4db1-9931-afd19e5014a5" />
+        </card>
+        <card ID="6" Name="RS422#01_RK12022" Type="422">
+            <parameter Name="CardType" Value="RS422" />
+            <parameter Name="LibVersion" Value="4.1.2" />
+            <channel ID="1" Name="CH-1" Alias="RS422#01_RK12022/CH-1" UUID="dd4d6a6e-fa7a-440b-99b6-0ee81b588339">
+                <parameter Name="BaudRate" Value="9600" />
+                <parameter Name="DataBits" Value="8" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="1" />
+                <parameter Name="WireMode" Value="4-wire" />
+                <busTable>
+                    <item UUID="7a89c16b-6b41-4980-ba72-8b01fa35a4b9" Channel="1" Direction="Tx" Label0="0" Label1="0" Label2="0" Label3="0" Length="8" />
+                    <item UUID="d44a64e4-192a-4873-adeb-77d97eef27b5" Channel="1" Direction="Tx" Label0="0" Label1="0" Label2="0" Label3="0" Length="4" />
+                </busTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="RS422#01_RK12022/CH-2" UUID="4b3431fe-8f26-471b-b81d-4085b727cfd1">
+                <parameter Name="BaudRate" Value="9600" />
+                <parameter Name="DataBits" Value="8" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="1" />
+                <parameter Name="WireMode" Value="4-wire" />
+                <busTable>
+                    <item UUID="756f9a66-dbdc-4eda-ae16-96251aba1e31" Channel="2" Direction="Rx" Label0="0" Label1="0" Label2="0" Label3="0" Length="8" />
+                    <item UUID="803a531e-16ad-4a40-b39c-b60ad6ac3dd9" Channel="2" Direction="Rx" Label0="0" Label1="0" Label2="0" Label3="0" Length="4" />
+                </busTable>
+            </channel>
+            <channel ID="3" Name="CH-3" Alias="RS422#01_RK12022/CH-3" UUID="e30b25f7-4ab3-4734-98ef-27eadb49c528">
+                <parameter Name="BaudRate" Value="460800" />
+                <parameter Name="DataBits" Value="6" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="2" />
+                <parameter Name="WireMode" Value="4-wire" />
+            </channel>
+            <channel ID="4" Name="CH-4" Alias="RS422#01_RK12022/CH-4" UUID="b485189f-d2b2-4661-bace-e5ae2bdf80d2">
+                <parameter Name="BaudRate" Value="460800" />
+                <parameter Name="DataBits" Value="5" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="2" />
+                <parameter Name="WireMode" Value="4-wire" />
+            </channel>
+            <channel ID="5" Name="CH-5" Alias="RS422#01_RK12022/CH-5" UUID="6fb69398-7fd9-40bf-8ee3-c1563245f0d4">
+                <parameter Name="BaudRate" Value="460800" />
+                <parameter Name="DataBits" Value="6" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="2" />
+                <parameter Name="WireMode" Value="4-wire" />
+            </channel>
+            <channel ID="6" Name="CH-6" Alias="RS422#01_RK12022/CH-6" UUID="e76bd7ca-10db-4348-bd88-b7c827bc326e">
+                <parameter Name="BaudRate" Value="460800" />
+                <parameter Name="DataBits" Value="7" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="EVEN" />
+                <parameter Name="StopBits" Value="2" />
+                <parameter Name="WireMode" Value="2-wire" />
+            </channel>
+            <channel ID="7" Name="CH-7" Alias="RS422#01_RK12022/CH-7" UUID="48186262-9f73-4530-9495-3070d92f2cb0">
+                <parameter Name="BaudRate" Value="460800" />
+                <parameter Name="DataBits" Value="5" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="1" />
+                <parameter Name="WireMode" Value="4-wire" />
+            </channel>
+            <channel ID="8" Name="CH-8" Alias="RS422#01_RK12022/CH-8" UUID="955f12f4-a302-4c4d-9238-2b6b0f274569">
+                <parameter Name="BaudRate" Value="460800" />
+                <parameter Name="DataBits" Value="6" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="Parity" Value="NONE" />
+                <parameter Name="StopBits" Value="2" />
+                <parameter Name="WireMode" Value="4-wire" />
+            </channel>
+        </card>
+        <card ID="10" Name="DA" Type="analog">
+            <parameter Name="CardType" Value="analog" />
+            <parameter Name="LibVersion" Value="4.1.0" />
+            <channel ID="1" Name="CH-1" Alias="DA-1" UUID="88e5262b-970d-4f53-8df1-a5bcb20c7a94">
+                <parameter Name="voltmax" Value="2" />
+                <parameter Name="voltmin" Value="-6" />
+                <busTable>
+                    <item UUID="0291f2c8-1248-4f52-800f-e26e7a96135c" Channel="1" Direction="Tx" Length="8" />
+                </busTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="DA-2" UUID="9ec4a48a-2353-47b0-9937-63da1737d251">
+                <parameter Name="voltmax" Value="0" />
+                <parameter Name="voltmin" Value="-5" />
+            </channel>
+            <channel ID="3" Name="CH-3" Alias="DA-3" UUID="e01873a8-af54-4f2c-84cd-58c77cb3a79f">
+                <parameter Name="voltmax" Value="1" />
+                <parameter Name="voltmin" Value="-7" />
+            </channel>
+            <channel ID="4" Name="CH-4" Alias="DA-4" UUID="3d4470ab-1ac2-4caf-a866-1b333425c812">
+                <parameter Name="voltmax" Value="9" />
+                <parameter Name="voltmin" Value="-6" />
+            </channel>
+            <channel ID="5" Name="CH-5" Alias="DA-5" UUID="101d0d04-baad-4bf7-98b1-1a572fb46a2e">
+                <parameter Name="voltmax" Value="6" />
+                <parameter Name="voltmin" Value="-9" />
+            </channel>
+            <channel ID="6" Name="CH-6" Alias="DA-6" UUID="31014c23-38e6-425f-aacb-486e7a744fd2">
+                <parameter Name="voltmax" Value="7" />
+                <parameter Name="voltmin" Value="-1" />
+            </channel>
+            <channel ID="7" Name="CH-7" Alias="DA-7" UUID="19861c95-a1e7-4cd8-af48-8c000a14c413">
+                <parameter Name="voltmax" Value="5" />
+                <parameter Name="voltmin" Value="0" />
+            </channel>
+            <channel ID="8" Name="CH-8" Alias="DA-8" UUID="132540f3-fb2e-456e-9ecc-a3f7150b2b1f">
+                <parameter Name="voltmax" Value="6" />
+                <parameter Name="voltmin" Value="-2" />
+            </channel>
+        </card>
+        <card ID="3" Name="switch" Type="analog">
+            <parameter Name="CardType" Value="analog" />
+            <parameter Name="LibVersion" Value="4.1.0" />
+            <channel ID="1" Name="CH-1" Alias="LVDTSIM#01_RK12012/CH-1" UUID="1dffeb82-3df6-4577-9e9e-2cbb0aa8d1ab">
+                <parameter Name="voltmax" Value="0" />
+                <parameter Name="voltmin" Value="0" />
+                <busTable>
+                    <item UUID="a5d02a76-9f4f-4e9a-b417-a07e998f82f5" Channel="1" Direction="Tx" Length="8" />
+                </busTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="LVDTSIM#01_RK12012/CH-2" UUID="f2aa40a6-8905-4629-8a15-45a985daa61a">
+                <parameter Name="voltmax" Value="0" />
+                <parameter Name="voltmin" Value="0" />
+            </channel>
+            <channel ID="3" Name="CH-3" Alias="LVDTSIM#01_RK12012/CH-3" UUID="92e03bac-16fd-4357-b672-d8e5897f35c6">
+                <parameter Name="voltmax" Value="0" />
+                <parameter Name="voltmin" Value="0" />
+            </channel>
+            <channel ID="4" Name="CH-4" Alias="LVDTSIM#01_RK12012/CH-4" UUID="9d55ea44-ece9-4d44-932b-b6792e8a7adb">
+                <parameter Name="voltmax" Value="1" />
+                <parameter Name="voltmin" Value="0" />
+            </channel>
+            <channel ID="5" Name="CH-5" Alias="LVDTSIM#01_RK12012/CH-5" UUID="5dffeb82-3df6-4577-9e9e-2cbb0aa8d1ab" />
+            <channel ID="6" Name="CH-6" Alias="LVDTSIM#01_RK12012/CH-6" UUID="f3aa40a6-8905-4629-8a15-45a985daa61a" />
+            <channel ID="7" Name="CH-7" Alias="LVDTSIM#01_RK12012/CH-7" UUID="9ee03bac-16fd-4357-b672-d8e5897f35c6" />
+            <channel ID="8" Name="CH-8" Alias="LVDTSIM#01_RK12012/CH-8" UUID="9f55ea44-ece9-4d44-932b-b6792e8a7adb" />
+            <channel ID="9" Name="CH-9" Alias="LVDTSIM#01_RK12012/CH-9" UUID="9dffeb82-3df6-4577-9e9e-2cbb0aa8d1ab" />
+            <channel ID="10" Name="CH-10" Alias="LVDTSIM#01_RK12012/CH-10" UUID="f6aa40a6-8905-4629-8a15-45a985daa61a">
+                <parameter Name="voltmax" Value="2" />
+                <parameter Name="voltmin" Value="0" />
+            </channel>
+            <channel ID="11" Name="CH-11" Alias="LVDTSIM#01_RK12012/CH-11" UUID="92f03bac-16fd-4357-b672-d8e5897f35c6" />
+            <channel ID="12" Name="CH-12" Alias="LVDTSIM#01_RK12012/CH-12" UUID="9755ea44-ece9-4d44-932b-b6792e8a7adb" />
+            <channel ID="13" Name="CH-13" Alias="LVDTSIM#01_RK12012/CH-13" UUID="13ffeb82-3df6-4577-9e9e-2cbb0aa8d1ab" />
+            <channel ID="14" Name="CH-14" Alias="LVDTSIM#01_RK12012/CH-14" UUID="f5aa40a6-8905-4629-8a15-45a985daa61a" />
+            <channel ID="15" Name="CH-15" Alias="LVDTSIM#01_RK12012/CH-15" UUID="92e13bac-16fd-4357-b672-d8e5897f35c6" />
+            <channel ID="16" Name="CH-16" Alias="LVDTSIM#01_RK12012/CH-16" UUID="9c55ea44-ece9-4d44-932b-b6792e8a7adb" />
+        </card>
+        <card ID="2" Name="1553B01_RK12007" Type="1553">
+            <parameter Name="CardType" Value="1553" />
+            <parameter Name="LibVersion" Value="4.0.0" />
+            <channel ID="1" Name="CH-1" Alias="1553B01_RK12007/CH-1" UUID="b987689c-6ca1-40c7-afff-a04ce95197f4">
+                <parameter Name="AperiodBlockNum" Value="0" />
+                <parameter Name="BusType" Value="A" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="FramePeriod(/ms)" Value="10" />
+                <parameter Name="PeriodBlockNum" Value="1" />
+                <parameter Name="RtNumber" Value="1" />
+                <parameter Name="Terminal" Value="BC;BM;" />
+                <busTable>
+                    <item UUID="7ce9d91b-a394-47b1-9316-c12ba975ee14" Bcperiod="10" Channel="1" Direction="" DstAddress="2" DstSubAddress="2" DstTR="0" Length="8" MsgID="0" MsgType="BC-RT" Period="10" SrcAddress="255" SrcSubAddress="255" SrcTR="255" Terminal="BC;" Uid="0" WordSize="4" />
+                </busTable>
+                <addrTable>
+                    <rtAddress Value="1" />
+                </addrTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="1553B01_RK12007/CH-2" UUID="ca6a60c1-2ef3-47c3-827c-385bc424ce6f">
+                <parameter Name="AperiodBlockNum" Value="0" />
+                <parameter Name="BusType" Value="A" />
+                <parameter Name="Direction" Value="Bid" />
+                <parameter Name="FramePeriod(/ms)" Value="10" />
+                <parameter Name="PeriodBlockNum" Value="1" />
+                <parameter Name="RtNumber" Value="2" />
+                <parameter Name="Terminal" Value="RT;" />
+                <busTable>
+                    <item UUID="ca4095bf-a2cb-4b57-8d47-1715c6ab4f23" Bcperiod="10" Channel="2" Direction="" DstAddress="2" DstSubAddress="2" DstTR="0" Length="8" MsgID="0" MsgType="BC-RT" Period="10" SrcAddress="255" SrcSubAddress="255" SrcTR="255" Terminal="RT;" Uid="0" WordSize="4" />
+                </busTable>
+                <addrTable>
+                    <rtAddress Value="2" />
+                </addrTable>
+            </channel>
+        </card>
+        <card ID="1" Name="CANdevice1" Type="CAN">
+            <parameter Name="CardType" Value="CAN" />
+            <parameter Name="LibVersion" Value="4.1.2" />
+            <channel ID="1" Name="CH-1" Alias="canchannnel1" UUID="1dsseb82-3df6-4577-9e9e-2cbb0aa8d1ab">
+                <parameter Name="BaudRate" Value="40K" />
+                <parameter Name="BusType" Value=":can_fd_brs:" />
+                <parameter Name="DBaudRate" Value="200K" />
+                <parameter Name="Direction" Value="Tx" />
+                <parameter Name="TerminalRes" Value="YES" />
+                <busTable>
+                    <item UUID="08b044c3-6d60-473e-b8d7-b808b2b629b9" CanId="1" CardId="1" Channel="1" Direction="Tx" FrameId="" FrameType="StdDataFrame" Length="8" endianType="LITTLE_ENDIAN" />
+                </busTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="canchannel2" UUID="f2bb20a6-8905-4629-8a15-45a985daa61a">
+                <parameter Name="BaudRate" Value="40K" />
+                <parameter Name="BusType" Value=":can_fd_brs:" />
+                <parameter Name="DBaudRate" Value="200K" />
+                <parameter Name="Direction" Value="Rx" />
+                <parameter Name="TerminalRes" Value="YES" />
+                <busTable>
+                    <item UUID="cfcbb7e5-83f2-42b0-ab4f-9b840ebff460" CanId="1" CardId="1" Channel="2" Direction="Rx" FrameId="" FrameType="StdDataFrame" Length="8" endianType="LITTLE_ENDIAN" />
+                </busTable>
+            </channel>
+        </card>
+        <card ID="9" Name="AD" Type="analog">
+            <parameter Name="CardType" Value="analog" />
+            <parameter Name="LibVersion" Value="4.1.0" />
+            <parameter Name="SampleRate(Hz)" Value="75" />
+            <channel ID="1" Name="CH-1" Alias="AD-1" UUID="91866066-c222-4a34-8ec8-727351c88ee2">
+                <parameter Name="voltmax" Value="2" />
+                <parameter Name="voltmin" Value="-6" />
+                <busTable>
+                    <item UUID="85892194-c84f-413d-8911-5fd33ca5a83f" Channel="1" Direction="Rx" Length="8" />
+                </busTable>
+            </channel>
+            <channel ID="2" Name="CH-2" Alias="AD-2" UUID="5ca8550c-4599-400d-a52c-5ce1f8d6377e">
+                <parameter Name="voltmax" Value="0" />
+                <parameter Name="voltmin" Value="-5" />
+            </channel>
+            <channel ID="3" Name="CH-3" Alias="AD-3" UUID="bb4e48f7-6d10-460a-a71c-5923731b2ab3">
+                <parameter Name="voltmax" Value="1" />
+                <parameter Name="voltmin" Value="-7" />
+            </channel>
+            <channel ID="4" Name="CH-4" Alias="AD-4" UUID="80ee22e8-9b34-4684-8941-7b0527a3ee6e">
+                <parameter Name="voltmax" Value="9" />
+                <parameter Name="voltmin" Value="-6" />
+            </channel>
+            <channel ID="5" Name="CH-5" Alias="AD-5" UUID="2d8a0032-d1ab-4763-aa17-1f81f481a329">
+                <parameter Name="voltmax" Value="6" />
+                <parameter Name="voltmin" Value="-9" />
+            </channel>
+            <channel ID="6" Name="CH-6" Alias="AD-6" UUID="3f9b7085-2cc8-4d16-8356-e0d3b43fe3d8">
+                <parameter Name="voltmax" Value="7" />
+                <parameter Name="voltmin" Value="-1" />
+            </channel>
+            <channel ID="7" Name="CH-7" Alias="AD-7" UUID="c0cd8e03-038c-48a0-85fb-b26832dfe1f8">
+                <parameter Name="voltmax" Value="6" />
+                <parameter Name="voltmin" Value="0" />
+            </channel>
+            <channel ID="8" Name="CH-8" Alias="AD-8" UUID="456c6367-4340-43ed-b3b3-d50fce6771ca">
+                <parameter Name="voltmax" Value="5" />
+                <parameter Name="voltmin" Value="-2" />
+            </channel>
+        </card>
+        <card ID="7" Name="RFM#01" Type="RFM">
+            <parameter Name="CardType" Value="RFM" />
+            <parameter Name="LibVersion" Value="4.1.0" />
+            <busTable>
+                <item UUID="22dc3b54-1fbe-4077-845a-48c8e621eb1c" Addr="0x0000000" Length="8" Direction="Tx" PeriodMs="10" />
+                <item UUID="22dc3b54-1fbe-4077-845a-48c8e621eb1c" Addr="0x0000000" Length="8" Direction="Rx" PeriodMs="10" />
+                <item UUID="d13f215d-f20a-4d95-bfec-4e1577755346" Addr="0x0000008" Length="1" Direction="Tx" PeriodMs="10" />
+                <item UUID="d13f215d-f20a-4d95-bfec-4e1577755346" Addr="0x0000008" Length="1" Direction="Rx" PeriodMs="10" />
+                <item UUID="cfb864f1-1ab2-42ed-a889-19eba7b35ba1" Addr="0x0000009" Length="7" Direction="Tx" PeriodMs="10" />
+                <item UUID="cfb864f1-1ab2-42ed-a889-19eba7b35ba1" Addr="0x0000009" Length="7" Direction="Rx" PeriodMs="10" />
+                <item UUID="bdb392bc-175a-478d-b11f-f17c28aa1644" Addr="0x0000012" Length="8" Direction="Tx" PeriodMs="10" />
+                <item UUID="bdb392bc-175a-478d-b11f-f17c28aa1644" Addr="0x0000012" Length="8" Direction="Rx" PeriodMs="10" />
+                <item UUID="6e235465-41fe-4e8c-9b1e-fa78591751d8" Addr="0x0000025" Length="6" Direction="Tx" PeriodMs="10" />
+                <item UUID="6e235465-41fe-4e8c-9b1e-fa78591751d8" Addr="0x0000025" Length="6" Direction="Rx" PeriodMs="10" />
+            </busTable>
+        </card>
+    </cardRoot>
+</autoTest>

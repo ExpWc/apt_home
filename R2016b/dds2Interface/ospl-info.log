@@ -1,0 +1,578 @@
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:31:01 CST 2020
+Description : Termination request (signal 2) received from PID 34256 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34256>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595496661.579784523
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:31:01 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34256>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595496661.579861521
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:31:03 CST 2020
+Description : Termination request (signal 2) received from PID 34250 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <34250>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595496663.060151987
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:31:03 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <34250>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595496663.060224460
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:31:03 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34250>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595496663.061393415
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:31:03 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34250>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : query could not be claimed.
+Internals   : u_queryTake/u_query.c/186/782/1595496663.061440738
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595496663.061446887
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:36:15 CST 2020
+Description : Termination request (signal 2) received from PID 34417 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <34417>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595496975.813255912
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:36:15 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <34417>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595496975.813321743
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:36:15 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34417>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595496975.814476068
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:36:15 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34417>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : query could not be claimed.
+Internals   : u_queryTake/u_query.c/186/782/1595496975.814509607
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595496975.814515627
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:36:18 CST 2020
+Description : Termination request (signal 2) received from PID 34408 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34408>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595496978.578102128
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:36:18 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34408>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595496978.578172196
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:37:15 CST 2020
+Description : Termination request (signal 2) received from PID 34468 (self), UID 0
+Node        : localhost.localdomain
+Process     : test4 <34468>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497035.219838179
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:37:15 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test4 <34468>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497035.219916833
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:37:15 CST 2020
+Node        : localhost.localdomain
+Process     : test4 <34468>
+Thread      : main thread 7ffff7fc0740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x604dc0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497035.221058077
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:37:15 CST 2020
+Node        : localhost.localdomain
+Process     : test4 <34468>
+Thread      : main thread 7ffff7fc0740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : query could not be claimed.
+Internals   : u_queryTake/u_query.c/186/782/1595497035.221103173
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x604dc0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497035.221109206
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:38:34 CST 2020
+Description : Termination request (signal 2) received from PID 34462 (self), UID 0
+Node        : localhost.localdomain
+Process     : test3 <34462>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497114.373427262
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:38:34 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test3 <34462>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497114.373505302
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:39:52 CST 2020
+Description : Termination request (signal 2) received from PID 34520 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34520>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497192.831519981
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:39:52 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34520>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497192.831590808
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:01 CST 2020
+Description : Termination request (signal 2) received from PID 34528 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <34528>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497201.572048855
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:01 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <34528>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497201.572111931
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:40:01 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34528>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497201.573265606
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:40:01 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34528>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : query could not be claimed.
+Internals   : u_queryTake/u_query.c/186/782/1595497201.573308647
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497201.573314509
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:26 CST 2020
+Description : Termination request (signal 2) received from PID 34573 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34573>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497226.091858509
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:26 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34573>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497226.091927148
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:28 CST 2020
+Description : Termination request (signal 2) received from PID 34579 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34579>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497228.880503856
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:28 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34579>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497228.880571165
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:32 CST 2020
+Description : Termination request (signal 2) received from PID 34586 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34586>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497232.187387262
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:32 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34586>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497232.187450464
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:34 CST 2020
+Description : Termination request (signal 2) received from PID 34593 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34593>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497234.388927917
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:34 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34593>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497234.388999217
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:35 CST 2020
+Description : Termination request (signal 2) received from PID 34599 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34599>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497235.999215156
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:35 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34599>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497235.999282064
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:43 CST 2020
+Description : Termination request (signal 2) received from PID 34606 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34606>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497243.958892786
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:43 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34606>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497243.958957447
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:40:45 CST 2020
+Description : Termination request (signal 2) received from PID 34565 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <34565>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497245.764137826
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:40:45 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <34565>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497245.764212550
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:40:45 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34565>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497245.765363975
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:40:45 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34565>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : query could not be claimed.
+Internals   : u_queryTake/u_query.c/186/782/1595497245.765409246
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497245.765414386
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:41:50 CST 2020
+Description : Termination request (signal 2) received from PID 34647 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34647>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497310.365823863
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:41:50 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34647>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497310.365899413
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:42:19 CST 2020
+Description : Termination request (signal 2) received from PID 34667 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <34667>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497339.424160241
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:42:19 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <34667>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497339.424242061
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:46:49 CST 2020
+Description : Termination request (signal 2) received from PID 34640 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <34640>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497609.213012848
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:46:49 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <34640>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497609.213087915
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:46:49 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34640>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497609.214245919
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:46:49 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <34640>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : query could not be claimed.
+Internals   : u_queryTake/u_query.c/186/782/1595497609.214290435
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6099b0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497609.214296442
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:47:24 CST 2020
+Description : Termination request (signal 2) received from PID 35027 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <35027>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497644.738783449
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:47:24 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <35027>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497644.738863080
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 17:47:27 CST 2020
+Description : Termination request (signal 2) received from PID 35002 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <35002>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595497647.161053056
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 17:47:27 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <35002>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595497647.161125246
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 17:47:27 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <35002>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x609bc0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497647.162281243
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 17:47:27 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <35002>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6098b0 (kind = U_READER).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595497647.162314199
+========================================================================================
+Report      : INFO
+Date        : Thu Jul 23 18:09:57 CST 2020
+Description : Termination request (signal 2) received from PID 35600 (self), UID 0
+Node        : localhost.localdomain
+Process     : test1 <35600>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595498997.731943933
+========================================================================================
+Report      : WARNING
+Date        : Thu Jul 23 18:09:57 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test1 <35600>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595498997.732041603
+========================================================================================
+Report      : ERROR
+Context     : DDS::WaitSet::detach_condition
+Date        : Thu Jul 23 18:09:57 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <35600>
+Thread      : main thread 7ffff7fc3740
+Internals   : WaitSet.cpp/446/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x609bc0 (kind = U_QUERY).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595498997.733192709
+========================================================================================
+Report      : ERROR
+Context     : DDS::OpenSplice::FooDataReader_impl::take_w_condition
+Date        : Thu Jul 23 18:09:57 CST 2020
+Node        : localhost.localdomain
+Process     : test1 <35600>
+Thread      : main thread 7ffff7fc3740
+Internals   : FooDataReader_impl.cpp/413/6.7.1/a4e8406/ae1e694
+----------------------------------------------------------------------------------------
+Report      : Claim Entity failed because the process is detaching from the domain "ospl_sp_ddsi" (0). Entity = 0x6098b0 (kind = U_READER).
+Internals   : user::u_observable::u_observableClaimCommon/u_observable.c/369/782/1595498997.733228680
+========================================================================================
+Report      : INFO
+Date        : Fri Jul 24 21:59:56 CST 2020
+Description : Termination request (signal 2) received from PID 41008 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <41008>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595599196.044929062
+========================================================================================
+Report      : WARNING
+Date        : Fri Jul 24 21:59:56 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <41008>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595599196.044993398
+========================================================================================
+Report      : INFO
+Date        : Fri Jul 24 22:01:33 CST 2020
+Description : Termination request (signal 2) received from PID 41194 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <41194>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595599293.765119332
+========================================================================================
+Report      : WARNING
+Date        : Fri Jul 24 22:01:33 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <41194>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595599293.765192537
+========================================================================================
+Report      : INFO
+Date        : Fri Jul 24 22:02:08 CST 2020
+Description : Termination request (signal 2) received from PID 41226 (self), UID 0
+Node        : localhost.localdomain
+Process     : test <41226>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/signalHandlerThread/os_signalHandler.c/571/0/1595599328.608918210
+========================================================================================
+Report      : WARNING
+Date        : Fri Jul 24 22:02:08 CST 2020
+Description : Received termination request, will detach user-layer from domain.
+Node        : localhost.localdomain
+Process     : test <41226>
+Thread      : signalHandler 7ffff58e2700
+Internals   : 6.7.1/a4e8406/ae1e694/u__userExitRequestCallbackWrapper/u_user.c/276/769/1595599328.608987992

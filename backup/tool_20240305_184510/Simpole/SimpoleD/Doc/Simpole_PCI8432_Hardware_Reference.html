@@ -1,0 +1,199 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PCI8432 Hardware Reference</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">Simpole<sup>&reg;</sup>
+    </td>   
+    <th width="4%"  scope="col"><a href="Simpole_PCI8432_SimpoleD_Reference.html">
+<img class="topimg"src="images/b_prev.gif"  ></a></th>    
+    <th width="3%"  scope="col">  </th>
+  </tr>
+</table>
+<h1>RS232 Hardware Reference（以PCI8432为例）</h1>
+<p >
+PCI8432 I/O板卡是NI公司生产的串行通信板卡之一，本节依据NI公司相关资料，结合在Simpole中的应用，介绍板卡硬件相关内容，包括板卡的组件、I/O口映射关系及板卡电气特性等。
+</p>
+<p >&nbsp;</p>
+<p >具体内容如下：</p>
+<p><a href="#Board_Overview">板卡概述</a></p>
+<p><a href="#PXI8432_Board_Componets">板卡组件</a></p>
+<hr>
+<h2><a name="Board_Overview">板卡概述</a></h2>
+<p>PCI8432板卡是一个支持RS232的串行通信板卡。
+
+</p>
+<h2><a name="PXI8432_Board_Componets">板卡组件</a></h2>
+<p>PCI8432板卡与外部设备通过连接器RJ50（10-position jack）实现连接，连接器RJ50（10-position jack）外形图如下图所示。</p>
+<img  src="images/PXI8431_Hardware_Reference_linker.jpg"  >
+<p>连接器RJ50（10-position jack）的引脚定义如下表所示。</p>
+<img   src="images/PXI8431_Hardware_Reference_linkerfeet.jpg"  >
+
+<p>&nbsp;</p>
+<p>NI公司匹配的通信电缆（非隔离）可以把连接器RJ50（10-position jack）转换成标准连接器DB-9或者DB-25。DB-9和DB-25连接器的引脚定义图分别如下图所示。</p>
+<img  src="images/PXI8431_Hardware_Reference_DB9.jpg"  >
+<img  src="images/PXI8431_Hardware_Reference_DB25.jpg"  >
+<p>&nbsp;</p>
+<p>DB-9、DB-25和10-position jack连接器引脚对应关系如下表所示。
+</p>
+<img  src="images/PXI8431_Hardware_Reference_list.jpg"  >
+<table  class="table-style" >
+<tr class="table-bgcolor">
+<th class="td-style" colspan="3">DB-9 Male</th>
+<th class="td-style" colspan="3">DB-25 Male</th>
+<th class="td-style" colspan="3">10-Position Modular Jack</th>
+</tr>
+<tr><td class="td-style">Pin</td>
+<td class="td-style"> EIA-232</td>
+<td class="td-style"> EIA-485/422</td>
+<td class="td-style"> Pin</td>
+<td class="td-style"> EIA-232</td>
+<td class="td-style"> EIA-485/422</td>
+<td class="td-style"> Pin</td>
+<td class="td-style"> EIA-232</td>
+<td class="td-style"> EIA-485/422</td>
+</tr>
+<tr><td class="td-style">1</td>
+<td class="td-style"> DCD</td>
+<td class="td-style"> GND</td>
+<td class="td-style"> 2</td>
+<td class="td-style"> TXD</td>
+<td class="td-style"> RTS+(HSO+)</td>
+<td class="td-style"> 1</td>
+<td class="td-style"> No Connect</td>
+<td class="td-style"> No Connect</td>
+</tr>
+<tr><td class="td-style">2</td>
+<td class="td-style"> RXD</td>
+<td class="td-style"> CTS+(HSI+)</td>
+<td class="td-style"> 3</td>
+<td class="td-style"> RXD</td>
+<td class="td-style"> CTS+(HSI+)</td>
+<td class="td-style"> 2</td>
+<td class="td-style"> RI</td>
+<td class="td-style"> TXD-</td>
+</tr>
+<tr><td class="td-style">3</td>
+<td class="td-style"> TXD</td>
+<td class="td-style"> RTS+(HSO+)</td>
+<td class="td-style"> 4</td>
+<td class="td-style"> RTS</td>
+<td class="td-style"> RTS-(HSO-)</td>
+<td class="td-style"> 3</td>
+<td class="td-style"> CTS</td>
+<td class="td-style"> TXD+</td>
+</tr>
+<tr><td class="td-style">4</td>
+<td class="td-style"> DTR</td>
+<td class="td-style"> RXD+</td>
+<td class="td-style"> 5</td>
+<td class="td-style"> CTS</td>
+<td class="td-style"> TXD+</td>
+<td class="td-style"> 4</td>
+<td class="td-style"> RTS</td>
+<td class="td-style"> RTS-(HSO-)</td>
+</tr>
+<tr><td class="td-style">5</td>
+<td class="td-style"> GND</td>
+<td class="td-style"> RXD-</td>
+<td class="td-style"> 6</td>
+<td class="td-style"> DSR</td>
+<td class="td-style"> CTS-(HSI-)</td>
+<td class="td-style"> 5</td>
+<td class="td-style"> DSR</td>
+<td class="td-style"> CTS-(HSI-)</td>
+</tr>
+<tr><td class="td-style">6</td>
+<td class="td-style"> DSR</td>
+<td class="td-style"> CTS-(HSI-)</td>
+<td class="td-style"> 7</td>
+<td class="td-style"> GND</td>
+<td class="td-style"> RXD-</td>
+<td class="td-style"> 6</td>
+<td class="td-style"> GND</td>
+<td class="td-style"> RXD-</td>
+</tr>
+<tr><td class="td-style">7</td>
+<td class="td-style"> RTS</td>
+<td class="td-style"> RTS-(HSO-)</td>
+<td class="td-style"> 8</td>
+<td class="td-style"> DCD</td>
+<td class="td-style"> GND</td>
+<td class="td-style"> 7</td>
+<td class="td-style"> DTR</td>
+<td class="td-style"> RXD+</td>
+</tr>
+<tr><td class="td-style">8</td>
+<td class="td-style"> CTS</td>
+<td class="td-style"> TXD+</td>
+<td class="td-style"> 20</td>
+<td class="td-style"> DTR</td>
+<td class="td-style"> RXD+</td>
+<td class="td-style"> 8</td>
+<td class="td-style"> TXD</td>
+<td class="td-style"> RTS+(HSO+)</td>
+</tr>
+<tr><td class="td-style">9</td>
+<td class="td-style"> RI</td>
+<td class="td-style"> TXD-</td>
+<td class="td-style"> 22</td>
+<td class="td-style"> RI</td>
+<td class="td-style"> TXD-</td>
+<td class="td-style"> 9</td>
+<td class="td-style"> RXD</td>
+<td class="td-style"> CTS+(HSI+)</td>
+</tr>
+<tr><td class="td-style">-</td>
+<td class="td-style"> -</td>
+<td class="td-style"> -</td>
+<td class="td-style"> -</td>
+<td class="td-style"> -</td>
+<td class="td-style"> -</td>
+<td class="td-style"> 10</td>
+<td class="td-style"> DCD</td>
+<td class="td-style"> GND</td>
+</tr>
+</table>
+
+
+<h3>&nbsp;</h3>
+<h3>通信方式连接</h3>
+<p>
+通常，微机系统以+5V代表逻辑“1”，而接地电压代表逻辑"0"，输出经RS232接口内的运算放大器改变±12V的振幅电压，再由电线传送到接收端。因为数据信号规定负逻辑，整体来说，两者的逻辑一致，TTL标准与RS232标准之间的电平转换电路利用集成芯片RS232实现。一般常见到的RS232接口接头大都以D型25引脚的连接器（DB-25）与外界连接。实际应用中，并不是每只引脚信号都必须用到，所以IBM公司将其缩减为9线，微机中使用的9芯D型连接器如下图所示。而工业控制的RS-232 口一般只使用RXD、TXD、GND 三条线。
+RS232传输最多15米。</p>
+<img width="12%" src="images/PXIserial_RS232_D9.jpg"  >
+
+<br>
+
+
+
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+<th   scope="col">
+<div align="left">
+<a href="Simpole_PCI8432_SimpoleD_Reference.html">
+<img class="tailimg"src="images/b_prev.gif"  ></a>
+RS232 SimpoleD Reference </div>
+</th>
+
+<th   scope="col">
+<div align="right">
+ 
+</div>
+</th>
+  </tr>
+</table>
+
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>

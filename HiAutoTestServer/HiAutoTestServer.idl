@@ -1,0 +1,377 @@
+module autoTest
+{
+
+	//card config info >>
+	struct Parameter
+	{
+		string parameterName; 
+		short parameterID; 
+		string value; 
+		string defaultValue;
+	};
+	typedef sequence<Parameter> ParameterSeq;
+
+	struct ChannelPara
+	{
+		short channelID; 
+		short direction; 
+		short mode; 
+		ParameterSeq paras;
+	};
+	typedef sequence<ChannelPara> ChannelParaSeq;
+
+	struct CardPara
+	{
+		string type;
+		short cardNo; 
+		string cardName;  
+		ChannelParaSeq chnParas;
+	};  
+
+	typedef sequence<CardPara> CardParaSeq;
+	struct CardManagerPara
+	{         
+		CardParaSeq cardParas;
+	};  
+	typedef sequence<CardManagerPara> CardManagerSeq;
+	//card config info <<
+
+	struct TY_HI_TIME
+	{
+		long long sec;
+		long long usec;
+	};
+
+	struct ReturnInfo
+	{
+		long sec;
+		long usec;
+		short status;
+	};
+
+	enum CaseStepStatusE
+	{
+		STATUS_READY, STATUS_RUNNING, STATUS_SUCCESS, STATUS_FAILED
+	};
+	
+	enum ServerRunStatusE
+	{
+		SERVER_NULL, SERVER_INITIAL, SERVER_RUNNING, SERVER_PAUSE
+	};
+
+	struct CaseExecute
+	{
+		string caseID;
+		short caseExecuteTimes;
+		short interval;
+	};
+
+	typedef sequence<CaseExecute> CaseExecuteSeq;
+
+	struct TestExecute
+	{
+		short testExecuteNum;
+		short interval;
+		CaseExecuteSeq caseExecute;
+	};
+
+	struct CaseStatus
+	{
+		string caseID;
+		CaseStepStatusE caseStepStatus;
+	};
+
+	typedef sequence<CaseStatus> CaseStatusSeq;
+
+	struct StepStatus
+	{
+		string caseID;
+		string stepID;
+		CaseStepStatusE caseStepStatus;
+		string msg;
+		string attachInfo;
+	};
+	typedef sequence<StepStatus> StepStatusSeq;
+
+	struct SubStepStatus
+	{
+		string caseID;
+		string stepID;
+		string subStepID;
+		CaseStepStatusE caseStepStatus;
+		string msg;
+		string attachInfo;
+	};
+	typedef sequence<SubStepStatus> SubStepStatusSeq;
+
+
+	struct FieldData
+	{
+		string icdID;
+		string fieldID;
+		long data;
+	};
+
+	struct CardStatus
+	{
+		long id;
+		long status;
+	};
+
+	typedef sequence<CardStatus> CardStatusSeq;
+
+	struct ServerStatus
+	{
+		long id;
+		ServerRunStatusE serverRunStatus;
+		CardStatusSeq cardStatus;
+	};
+
+	struct CommonStatusInfo
+	{
+		long id; //serverID, cardID/deviceID, channelID
+		long status;// 
+		string statusMsg;// 状态码，状态信息（主要指错误信息）
+	};
+	typedef sequence<CommonStatusInfo> CommonStatusInfoSeq;
+	struct CardStatusInfo
+	{
+		short cardID;
+		CommonStatusInfo cardStatus;
+		CommonStatusInfoSeq channelStatusInfos;
+	};
+	typedef sequence<CardStatusInfo> CardStatusInfoSeq;
+	struct StatusInfo
+	{
+		CommonStatusInfo targetStatus;
+		CardStatusInfoSeq cardStatusInfos;
+	};
+
+	struct ExecutiveInfo
+	{
+		string preCaseID;
+		string preStepID;
+		long caseRunTimes;
+		long successNum;
+		long failNum;
+		CaseStepStatusE runStatus;
+	};
+
+
+	struct RecordInfo
+	{
+		string icdID;
+		TY_HI_TIME startTime;    
+		TY_HI_TIME stopTime;
+		long dataType;
+		long dataCount;
+		long dataLength;
+
+	};
+	typedef sequence<RecordInfo> RecordInfoSeq;
+
+	typedef sequence<string> fieldIDSeq;
+
+	struct FieldIcdInfo
+	{
+		fieldIDSeq fieldID;
+		long fieldNum;
+		string ICDID;
+		string caseID;
+		long cardID;
+		long channelID;
+	};
+
+	struct ModelInfo
+	{
+		string modelName;
+		fieldIDSeq varName;
+		long varNum;
+	};
+
+	struct RecordList
+	{
+		string name;
+		string path;
+		TY_HI_TIME startTime;
+		TY_HI_TIME stopTime;
+		long dataCount;
+		long dataLength;
+		RecordInfoSeq icdInfo;
+		long icdCount;
+	};
+
+	typedef sequence<RecordList> RecordListSeq;
+	typedef sequence<double> Payload;
+	struct StorageData
+	{
+		Payload data;
+	};
+	
+	typedef sequence<StorageData> StorageDataSeq;
+	typedef sequence<TY_HI_TIME> HiTimeSeq;
+
+/*
+	struct RecordInfo
+	{
+		string icdID;
+		TY_HI_TIME startTime;    
+		TY_HI_TIME stopTime;
+		long dataCount;
+		long dataLength;
+	};
+
+	struct ModelRecordInfo
+	{
+		string icdID;
+		TY_HI_TIME startTime;    
+		TY_HI_TIME stopTime;
+		long dataCount;
+		long dataLength;
+	};
+	typedef sequence<ModelRecordInfo> ModelRecordInfoSeq;
+
+	struct ModelRecordList
+	{
+		string name;
+		string path;
+		TY_HI_TIME startTime;
+		TY_HI_TIME stopTime;
+		long dataCount;
+		long dataLength;
+		ModelRecordInfoSeq icdInfo;
+		long icdCount;
+	};
+	typedef sequence<ModelRecordList> ModelRecordListSeq;
+*/
+
+/*
+	struct StorageTime
+	{
+	    unsigned int tv_sec;
+	    unsigned int tv_usec;
+	};
+
+	struct RecordInfo
+	{
+		string icdID;
+		TY_STORAGE_TIME startTime;
+		TY_STORAGE_TIME stopTime;
+		int dataCount;
+		int dataLength;
+	};
+
+	struct RecordList
+	{
+		string name;
+		string path;
+		StorageTime startTime;
+		StorageTime stopTime;
+		long dataCount;
+		long dataLength;
+		RecordInfo icdInfo[256];
+		long icdCount;
+	};
+*/
+	typedef sequence<string> SqFieldID;
+	typedef sequence<double> IcdData;
+
+	struct GetIcdInfo
+	{
+		string icdID;
+		SqFieldID fieldID;
+		string cardType;
+		short cardID;
+		short fieldNum;
+		IcdData data;
+	};
+	
+	typedef sequence<GetIcdInfo> TyGetIcdInfo;
+
+	struct _send_icd_info
+	{
+		string icdID;
+		string cardType;
+		short cardID;
+	};
+	typedef sequence<_send_icd_info> TySendIcdInfo;
+
+	typedef sequence<string> SqFullPath;
+	typedef sequence<double> ModeData;
+	typedef struct _model_info
+	{
+		string modelName;
+		SqFullPath fullPath;
+		ModeData data;
+		short num;
+	}TY_MODEL_INFO;
+	typedef sequence<TY_MODEL_INFO> TyModelInfo;
+
+	typedef struct _set_icd_info
+	{
+		string icdID;
+		SqFieldID fieldID;
+		IcdData data;
+		short fieldNum;
+	}TY_SET_ICD_INFO;
+	typedef sequence<TY_SET_ICD_INFO> TySetIcdInfo;
+
+	typedef struct _step_info
+	{
+		string caseID;
+		string stepID;
+	}TY_STEP_INFO;
+	typedef sequence<TY_STEP_INFO> StepInfoSeq;
+
+	interface HiAutoTest 
+	{
+
+		ReturnInfo startManualTest ();
+		ReturnInfo stopManualTest ();
+		ReturnInfo startModel (in string pData);
+		ReturnInfo stopModel (in string modelName);
+		ReturnInfo getModelRunStatus (in string modelName, out long modelStatus);
+		ReturnInfo setICDData (in TySetIcdInfo icdInfo, in long icdNum);
+		ReturnInfo sendICDData(in TySendIcdInfo icdInfo, in long icdNum);
+		ReturnInfo getICDData(in TyGetIcdInfo icdInfoIn, out TyGetIcdInfo icdInfo, in long icdNum);
+		ReturnInfo getModelParam(in TyModelInfo modelInfoIn,out TyModelInfo modelInfo, in long modelNum);
+		ReturnInfo setModelParam(in TyModelInfo modelInfo, in long modelNum);
+		ReturnInfo getModelVar(in TyModelInfo modelInfoIn, out TyModelInfo modelInfo, in long modelNum);
+		ReturnInfo setModelVar(in TyModelInfo modelInfo, in long modelNum);
+		ReturnInfo optManualTestOneStep(in string oneStep, out StepStatusSeq info);
+/**/
+		ReturnInfo setCase(in string caseData);
+		ReturnInfo setICD(in string ICDInfo);
+		ReturnInfo setChannelConfig(in string channelConfig);
+		ReturnInfo setCurveConfig(in string curveInfo);
+		ReturnInfo start(in TestExecute testExecute);
+		ReturnInfo pause();
+		ReturnInfo stop();
+		ReturnInfo stopStep(in StepInfoSeq stepInfo);//add by ZR 20230613
+		ReturnInfo getCaseStatus(in CaseStatusSeq cardStatusDess, out CaseStatusSeq cardStatusVals);
+		ReturnInfo getStepStatus(in StepStatusSeq stepStatusDess, out StepStatusSeq stepStatusVals);
+		ReturnInfo getSubStepStatus(in SubStepStatusSeq subStepStatusDess, out SubStepStatusSeq subStepStatusVals);
+		ReturnInfo getFieldData(in FieldData fieldDataDess, out FieldData fieldDataVals);
+		//ReturnInfo getServerStatus(out ServerStatus ServerStatusVal);
+		ReturnInfo getCardsInfo(out CardManagerSeq info);
+		ReturnInfo getServerStatus(out StatusInfo info);
+		ReturnInfo getExecutiveInfo(out ExecutiveInfo info);
+
+		ReturnInfo setStorageConfig(in string storageInfo);	
+		ReturnInfo getRecordListNum(out long listNum);
+		ReturnInfo getRecordList(out RecordListSeq pList, out long listLen);
+		ReturnInfo getDataByTime(in string storageName, in FieldIcdInfo varInfo, in TY_HI_TIME startTime, in TY_HI_TIME stopTime, out StorageDataSeq pData, out HiTimeSeq pTime, inout long maxCount);
+		ReturnInfo getDataByIndex(in string storageName, in FieldIcdInfo varInfo, in long startIndex, in long stopIndex, out StorageDataSeq pData, out HiTimeSeq pTime, inout long maxCount);
+		ReturnInfo getIndexByTime(in string storageName, in FieldIcdInfo varInfo, in TY_HI_TIME startTime, in TY_HI_TIME stopTime, out long startIndex, out long stopIndex);
+		ReturnInfo deleteStorageRecord(in string storageName);	
+		ReturnInfo deleteAllStorageRecord();
+
+
+		ReturnInfo getModelDataByTime(in string storageName, in ModelInfo varInfo, in TY_HI_TIME startTime, in TY_HI_TIME stopTime, out StorageDataSeq pData, out HiTimeSeq pTime, inout long maxCount);
+		ReturnInfo getModelDataByIndex(in string storageName, in ModelInfo varInfo, in long startIndex, in long stopIndex, out StorageDataSeq pData, out HiTimeSeq pTime, inout long maxCount);
+		ReturnInfo getModelIndexByTime(in string storageName, in ModelInfo varInfo, in TY_HI_TIME startTime, in TY_HI_TIME stopTime, out long startIndex, out long stopIndex);
+
+		ReturnInfo getIpInfo(out string ipInfo);
+	};
+	
+};

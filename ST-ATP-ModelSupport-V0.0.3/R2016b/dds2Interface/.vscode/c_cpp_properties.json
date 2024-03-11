@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/simpole/V4.0.0/dds2_pt",
+                "/home/simpole/V4.0.0/dds2_pt/gencpp",
+                "/opt/PrismTech/Vortex_v2/Device/VortexOpenSplice/6.7.1/HDE/x86_64.linux/include",
+                "/opt/PrismTech/Vortex_v2/Device/VortexOpenSplice/6.7.1/HDE/x86_64.linux/include/sys",
+                "/opt/PrismTech/Vortex_v2/Device/VortexOpenSplice/6.7.1/HDE/x86_64.linux/include/dcps/C++/SACPP"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

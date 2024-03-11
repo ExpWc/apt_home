@@ -1,0 +1,107 @@
+//@file:   HiAutoTestServer.mpc  
+//@author: zr
+
+project(*idl): taoidldefaults { 
+  idlflags += -Sp 
+  IDL_Files { 
+    HiAutoTestServer.idl 
+  } 
+  custom_only = 1 
+}
+
+project(*Server):namingexe, taoserver { 
+  after += *idl 
+  
+  includes += $(SIMPOLE_HOME)/ServiceControl
+  includes += $(HRP_HOME)/HiReport
+  includes += $(TAO_ROOT)/orbsvcs/
+  includes += $(HRP_HOME)/tinyxml
+  includes += $(AUTO_HOME)/HiCaseManager
+  includes += $(AUTO_HOME)/HiICDManager
+  includes += $(AUTO_HOME)/HiICDManager/Block 
+  includes += $(AUTO_HOME)/HiICDManager/Field
+  includes += $(AUTO_HOME)/HardwareManager
+  includes += $(AUTO_HOME)/CCard
+  includes += $(AUTO_HOME)/DataManager
+  includeS += $(AUTO_HOME)/HiLog
+  includes += $(AUTO_HOME)/HiStorageManager
+  includes += $(AUTO_HOME)/HiCurveIncManager/Curve
+  includes += $(AUTO_HOME)/AutoTestInterface
+  includes += $(AUTO_HOME)/StepBase
+  includes += $(AUTO_HOME)/HiCaseManager/StepInstance
+  includes += $(AUTO_HOME)/HiCaseManager/RTCTimer
+  includes += $(SIMPOLE_HOME)/include/HiMGlobalVarLib
+    
+  exename = ./bin/HiAutoTestServer
+
+  lit_libs += dl
+  lit_libs += rt
+  lit_libs += CCard
+  lit_libs += StorageManager
+  lit_libs += HiReport
+  lit_libs += service_control
+  lit_libs += CaseManager
+  lit_libs += ICDManager
+  lit_libs += HardwareManager
+  lit_libs += DataManager
+  lit_libs += HiLog
+  lit_libs += HiMGlobalVar
+  lit_libs += HiMVarCom
+  lit_libs += HiMParaCom
+  lit_libs += SimulinkOffset
+  lit_libs += AutoTestInterface
+  lit_libs += CurveManager
+  lit_libs += StepBase
+  
+  //it_libs += HiPack
+  //it_libs += TestStorage
+  
+  //libpaths >>>>
+  libpaths += $(AUTO_HOME)/lib
+  libpaths += $(HRP_HOME)/lib
+  libpaths += $(SOPOLE_HOME)/lib
+  libpaths += $(SIMPOLE_HOME)/include/lib 
+  libpaths += /usr/local/lib64
+  //libpaths <<<<
+  Source_Files {
+    HiAutoTestServerC.cpp
+    HiAutoTestServerS.cpp
+    CorbaImpl.cpp
+  	CorbaManager.cpp
+	  ServerMain.cpp
+  } 
+  IDL_Files { 
+  } 
+}
+
+project(*Client) : namingexe,taoclient {
+  after += *idl 
+ 
+  //libpaths <<<<
+  exename = ./bin/HiAutoTestClient
+  includes += $(TAO_ROOT)/orbsvcs/
+  Source_Files {
+    HiAutoTestServerC.cpp
+    ClientMain.cpp
+  }
+  IDL_Files {
+  }
+}
+
+project(*SOClient) : taolib {
+  after += *idl 
+  after += TAO_CosNaming
+  sharedname = HiAutoTest_Client
+  includes += $(TAO_ROOT)/orbsvcs/
+  includes += $(HRP_HOME)/HiReport
+
+  libpaths += $(HRP_HOME)/lib
+  lit_libs += TAO_CosNaming TAO_AnyTypeCode
+  lit_libs += HiReport
+  Source_Files {
+    clientLib.cpp
+  }
+  Source_Files { 
+	  HiAutoTestServerC.cpp
+  }
+}

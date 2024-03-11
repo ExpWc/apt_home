@@ -1,0 +1,209 @@
+variables:
+        TYPE: 'ManagerServer'
+        CARDNAME: 'HiLog'
+        HEAD: 'ST-ATP'
+       
+        
+stages:
+        - build
+        #- build_windows
+        - upload
+
+centos7:
+        stage: build
+        image: repo.runketongyong.net:8553/esp/centos:7
+        only:
+                - tags
+        script:
+                - ls ./ -al
+                - cat /etc/redhat-release
+#设置变量
+                - mkdir /home/simpole/ATP_V1.0.0 -p
+                - mkdir /home/simpole/ATP_V1.0.0/lib -p
+                - AUTO_HOME=/home/simpole/ATP_V1.0.0
+                - export AUTO_HOME
+                - LD_LIBRARY_PATH=$AUTO_HOME/lib:$LD_LIBRARY_PATH
+                - export LD_LIBRARY_PATH
+                - PATH=$AUTO_HOME/bin/$PATH
+                - export PATH
+                - SIMPOLE_HOME=/home/simpole/V2.1.4
+                - export SIMPOLE_HOME
+                - PATH=SIMPOLE_HOME/bin/$PATH
+                - export PATH
+                - LD_LIBRARY_PATH=$SIMPOLE_HOME/include:$LD_LIBRARY_PATH
+                - export LD_LIBRARY_PATH
+                - mkdir ~/rpmbuild/{BUILDROOT,RPMS,SOURCES,SPECS,SRPMS} -p
+
+                - mkdir $AUTO_HOME/$CI_PROJECT_NAME
+                - mkdir ~/rpmbuild/SOURCES/ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - /bin/cp -ar ./* $AUTO_HOME/$CI_PROJECT_NAME
+                - /bin/cp -ar $AUTO_HOME/$CI_PROJECT_NAME ~/rpmbuild/SOURCES/ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG/
+
+#拉取依赖
+                - cd  $AUTO_HOME
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/OISP4/$CARDNAME/$BASE; bye"
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/OISP4/$CARDNAME/$MANAGER; bye"
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/OISP4/$STORAGE; bye"
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/EDP/01_Board/$DRIVER; bye"
+
+#设置基础环境
+                - echo $AUTO_HOME
+                - echo $OSPL_HOME
+                - ls $AUTO_HOME
+                - cd $AUTO_HOME && lftp -e "open 10.10.1.17; user guest guest; mirror /Debug/ESP/DDS/DDS6.7.1; bye"
+                - ftp -i -n -v 10.10.1.17 <<EOF
+                - user guest guest
+                - bin
+                #- cd /Debug/ESP/OISP4/00_Lib/
+                #- mget $dds2pt
+                #- mget $CCard
+                #- cd /Debug/ESP/MSP/
+                #- mget $Tinyxml
+                #- mget $HiReport
+                #- mget $HiResource
+                #- mget $ServiceControl
+                - close
+                - bye
+                - EOF
+                #- rpm -ivh *.rpm --force --nodeps
+
+#编译服务
+                - ls ./
+                - echo "$AUTO_HOME"
+                - make -C $AUTO_HOME/$CI_PROJECT_NAME || exit 1 && echo "make--------OK!"
+                #- rm -f $AUTO_HOME/$CI_PROJECT_NAME/{*.c,*.cpp,*.o,*.vcxproj,Makefile}
+                #- rm -rf $AUTO_HOME/$CI_PROJECT_NAME/.svn
+                - find $AUTO_HOME/$CI_PROJECT_NAME/ -type f -name "*.c" -or -name "*.cpp" -or -name "*.o" -or -name "*.vcxproj" -or -name "Makefile" | xargs rm -rf
+                - find $AUTO_HOME/$CI_PROJECT_NAME/ -type f -name ".svn" -or -name ".git" -or -name "*.yml" | xargs rm -rf
+                - cd /builds/$CI_PROJECT_PATH/
+                - mkdir ./RedHawk7/lib -p
+                - /bin/cp -ar $AUTO_HOME/$CI_PROJECT_NAME ./RedHawk7
+                - find $AUTO_HOME/ -type f -name "lib$CI_PROJECT_NAME*" -exec cp -a {} ./RedHawk7/lib \;
+                - ls ./RedHawk7/lib
+                - ls ./RedHawk7
+
+#build rpm
+                #- svn export --force http://10.10.1.39/platform/ESP/08_Tools/08_01_RPMInstaller/Software/RPMInstaller/AT-RPM-load.sh ~/rpmbuild/SPECS/AT-RPM-load.sh --username fei.wang3 --password Wangfei123456 --no-auth-cache
+                - lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/Tools/RPMInstaller/AT-RPM-load.sh -O ~/rpmbuild/SPECS/; bye"
+                - cd ~/rpmbuild/SOURCES/ && tar zcvf ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG.tar.gz ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - cd ~/rpmbuild/SPECS/ && chmod +x * && ./AT-RPM-load.sh ST-ATP-$CI_PROJECT_NAME $CI_COMMIT_TAG
+                - cd /builds/$CI_PROJECT_PATH/
+                - cp -a ~/rpmbuild/RPMS/x86_64/*.rpm /builds/$CI_PROJECT_PATH/
+
+
+        artifacts:
+                paths:
+                        - ./RedHawk7
+                        - ./*.rpm
+
+centos6:
+        stage: build
+        image: repo.runketongyong.net:8553/esp/centos:6
+        only:
+                - tags
+        script:
+                - ls ./ -al
+                - cat /etc/redhat-release
+                
+#设置变量
+                - mkdir /home/simpole/ATP_V1.0.0 -p
+                - mkdir /home/simpole/ATP_V1.0.0/lib -p
+                - AUTO_HOME=/home/simpole/ATP_V1.0.0
+                - export AUTO_HOME
+                - LD_LIBRARY_PATH=$AUTO_HOME/lib:$LD_LIBRARY_PATH
+                - export LD_LIBRARY_PATH
+                - PATH=$AUTO_HOME/bin/$PATH
+                - export PATH
+                - SIMPOLE_HOME=/home/simpole/V2.1.4
+                - export SIMPOLE_HOME
+                - PATH=SIMPOLE_HOME/bin/$PATH
+                - export PATH
+                - LD_LIBRARY_PATH=$SIMPOLE_HOME/include:$LD_LIBRARY_PATH
+                - export LD_LIBRARY_PATH
+                - mkdir ~/rpmbuild/{BUILDROOT,RPMS,SOURCES,SPECS,SRPMS} -p
+
+                - mkdir $AUTO_HOME/$CI_PROJECT_NAME
+                - mkdir ~/rpmbuild/SOURCES/ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - /bin/cp -ar ./* $AUTO_HOME/$CI_PROJECT_NAME
+                - /bin/cp -ar $AUTO_HOME/$CI_PROJECT_NAME ~/rpmbuild/SOURCES/ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG/
+
+
+#拉取依赖
+                - cd  $AUTO_HOME
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/OISP4/$CARDNAME/$BASE; bye"
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/OISP4/$CARDNAME/$MANAGER; bye"
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/OISP4/$STORAGE; bye"
+                #- lftp -e "open 10.10.1.17; user guest guest; mget /Debug/EDP/01_Board/$DRIVER; bye"
+
+#设置基础环境
+                - echo $AUTO_HOME
+                - echo $OSPL_HOME
+                - ls $AUTO_HOME
+                - cd $AUTO_HOME && lftp -e "open 10.10.1.17; user guest guest; mirror /Debug/ESP/DDS/DDS6.7.1; bye"
+                - ftp -i -n -v 10.10.1.17 <<EOF
+                - user guest guest
+                - bin
+                #- cd /Debug/ESP/OISP4/00_Lib/
+                #- mget $dds2pt
+                #- mget $CCard
+                #- cd /Debug/ESP/MSP/
+                #- mget $Tinyxml
+                #- mget $HiReport
+                #- mget $HiResource
+                #- mget $ServiceControl
+                - close
+                - bye
+                - EOF
+                #- rpm -ivh *.rpm --force --nodeps
+                
+#编译服务
+                - ls ./
+                - echo "$AUTO_HOME"
+                - make -C $AUTO_HOME/$CI_PROJECT_NAME || exit 1 && echo "make--------OK!"
+                - find $AUTO_HOME/$CI_PROJECT_NAME/ -type f -name "*.c" -or -name "*.cpp" -or -name "*.o" -or -name "*.vcxproj" -or -name "Makefile" | xargs rm -rf
+                - find $AUTO_HOME/$CI_PROJECT_NAME/ -type f -name ".svn" -or -name ".git" -or -name "*.yml" | xargs rm -rf
+                - cd /builds/$CI_PROJECT_PATH/
+                - mkdir ./RedHawk6/lib -p
+                - /bin/cp -ar $AUTO_HOME/$CI_PROJECT_NAME ./RedHawk6
+                - find $AUTO_HOME/ -type f -name "lib$CI_PROJECT_NAME*" -exec cp -a {} ./RedHawk6/lib \;
+                - ls ./RedHawk6/lib
+                - ls ./RedHawk6
+#build rpm
+                #- svn export --force http://10.10.1.39/platform/ESP/08_Tools/08_01_RPMInstaller/Software/RPMInstaller/AT-RPM-load.sh ~/rpmbuild/SPECS/AT-RPM-load.sh --username fei.wang3 --password Wangfei123456 --no-auth-cache
+                - lftp -e "open 10.10.1.17; user guest guest; mget /Debug/ESP/Tools/RPMInstaller/AT-RPM-load.sh -O ~/rpmbuild/SPECS/; bye"
+                - cd ~/rpmbuild/SOURCES/ && tar zcvf ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG.tar.gz ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - cd ~/rpmbuild/SPECS/ && chmod +x * && ./AT-RPM-load.sh ST-ATP-$CI_PROJECT_NAME $CI_COMMIT_TAG
+                - cd /builds/$CI_PROJECT_PATH/
+                - cp -a ~/rpmbuild/RPMS/x86_64/*.rpm /builds/$CI_PROJECT_PATH/
+
+        artifacts:
+                paths:
+                        - ./RedHawk6
+                        - ./*.rpm
+
+
+upload_ftp:
+        stage: upload
+        image: dockito/lftp-client
+        only:
+                - tags
+        dependencies:
+                - centos7
+                - centos6
+
+        script:
+                - pwd
+                - ls -l
+                - mkdir ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - mkdir $CARDNAME
+                - /bin/cp -ar RedHawk7 ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - /bin/cp -ar RedHawk6 ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - mv ./*.rpm $CARDNAME
+                #- mv $HEAD-$CI_PROJECT_NAME-$CI_COMMIT_TAG.zip $CARDNAME
+                - ls ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - tar zcvf ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG.tar.gz ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG
+                - ls -l
+                - mv ST-ATP-$CI_PROJECT_NAME-$CI_COMMIT_TAG.tar.gz $CARDNAME
+                - ls -l $CARDNAME
+                #- lftp -e "open 10.10.1.17; user guest guest; mirror -X .*/ --reverse --verbose $CARDNAME /tmp/ESP/$TYPE/; bye"
+                - lftp -e "open 10.10.1.17; user guest guest; mirror -X .*/ --reverse --verbose $CARDNAME /Debug/AutoTestRT/$TYPE/; bye"

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root simversion="R2017b" type="Matlab">
+    <model name="test1">
+        <param />
+    </model>
+</root>

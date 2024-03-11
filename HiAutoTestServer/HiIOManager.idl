@@ -1,0 +1,143 @@
+#include "../HiResource/Core.idl"
+
+module io
+{
+    //card config info >>
+    struct Parameter
+    {
+        string parameterName; 
+        short parameterID; 
+        string value; 
+        string defaultValue;
+    };
+    typedef sequence<Parameter> ParameterSeq;
+
+    struct ChannelPara
+    {
+        short channelID; 
+        short direction; 
+        short mode; 
+        ParameterSeq paras;
+    };
+    typedef sequence<ChannelPara> ChannelParaSeq;
+    
+    struct CardPara
+    {
+        string type;
+        short cardNo; 
+        string cardName; 
+        short devID;
+        ParameterSeq paras; 
+        ChannelParaSeq chnParas;
+    };  
+    typedef sequence<CardPara> CardParaSeq;
+    //card config info <<
+    
+    //card statistic info >>
+    struct HiTime
+    {
+        long sec;
+        long usec;
+    };
+	
+	struct CommonStatisticInfo
+    {
+        long       id; 
+        long       reserve1; 
+        long       reserve2; 
+        long       reserve3; 
+        long long  mess_num;
+        long long  unmess_num; 
+        HiTime     inter_time;
+        HiTime     last_time;
+        HiTime     min_time;
+        HiTime     max_time;
+        long long  total_len;
+        string     desc;
+    };
+
+    typedef sequence<CommonStatisticInfo> CommonStatisticInfoSeq;
+    struct ChnStatisticInfo
+    {
+        short chnID;//src
+        CommonStatisticInfoSeq icdStatisticInfos;
+        CommonStatisticInfoSeq hwStatisticInfos;
+    };
+    typedef sequence<ChnStatisticInfo> ChnStatisticInfoSeq;
+    struct CardStatisticInfo
+    {
+        short cardID;
+        CommonStatisticInfo statisticInfo;
+        CommonStatisticInfoSeq chnStatisticInfos;
+    };
+    typedef sequence<CardStatisticInfo> CardStatisticInfoSeq;
+    //card statistic info <<
+
+	/*storage status>>>*/
+	struct dataPacketInfo
+	{
+		long id;
+		long sn;
+		long count;
+		long size;
+		HiTime startTime;
+		HiTime stopTime;
+	};
+
+	typedef sequence<dataPacketInfo> dataPacketInfoSeq;
+	struct storageStatus
+	{
+		long status;
+		long freeDisk;
+		string statusMsg;
+		string IP;
+		string path;
+		string busType;
+		long long storageStartTimeSec;
+		long long storageStopTimeSec;
+		dataPacketInfoSeq icdInfo;
+		dataPacketInfoSeq channelInfo;
+	};
+
+	typedef sequence<char> payloadTypeSeq;
+	struct readDataType
+	{
+		long id;
+		long src;
+		long length;
+		long sec;
+		long usec;
+		payloadTypeSeq payload;
+	};
+
+	typedef sequence<readDataType> storageDataSeq;
+	/*storage status<<<*/
+
+
+    interface IODevice : core::HiResource
+    {
+        core::ReturnInfo getCardsInfo(out CardParaSeq info);
+        
+        core::ReturnInfo getCardStatisticInfo(in short cardID,out CardStatisticInfoSeq infoSeq );
+        core::ReturnInfo getChnStatisticInfo(in short cardID,in short chnID,out ChnStatisticInfoSeq infoSeq );
+        core::ReturnInfo clearCardStatisticInfo(in short cardID);
+        core::ReturnInfo clearChnStatisticInfo(in short cardID,in short chnID );
+        
+        core::ReturnInfo setRouter(in string routerData);
+        core::ReturnInfo start();
+        core::ReturnInfo stop();
+
+		//storage func
+		core::ReturnInfo initStorage(in string storeContent);
+		core::ReturnInfo startStorage(in string storageName);
+		core::ReturnInfo stopStorage();
+		core::ReturnInfo deleteStorageRecord(in string storageName);
+		core::ReturnInfo getStorageStatus(out storageStatus info);
+		core::ReturnInfo getDataByIndex(in string storageName, in long channelSN, in long ddsID,
+						in long startIndex, in long stopIndex, out storageDataSeq pData, in long maxCount, in long flag, out long readDataCount);
+		core::ReturnInfo getDataByTime(in string storageName, in long channelSN, in long ddsID, inout HiTime startTime, inout HiTime stopTime,
+					out storageDataSeq pData, in long maxCount, in long flag, out long readDataCount);
+
+
+    };
+};

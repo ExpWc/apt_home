@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PCI6509 Hardware Reference</title>
+<link href="simpole.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<table width="100%" border="0"  bgcolor="#E7EBF7"class="titlebg" >
+  <tr>
+    <td width="93%" height="40" valign=top  class="story">Simpole<sup>&reg;</sup>
+    </td>   
+    <th width="4%"  scope="col"><a href="Simpole_PCI6509_SimpoleD_Reference.html">
+<img class="topimg"src="images/b_prev.gif" ></a></th>    
+    <th width="3%"  scope="col"> <a href="Simpole_PCI6509.html">
+<img class="topimg"src="images/b_next.gif" ></a> </th>
+  </tr>
+</table>
+<h1>PCI6509 Hardware Reference（PCI6509 硬件参考）
+</h1>
+<p>
+PCI6509 I/O板卡是NI公司M系列板卡成员之一，本节依据NI公司相关资料，结合在Simpole中的应用，介绍板卡硬件相关内容，包括板卡的组件、I/O口映射关系及板卡电气特性等。
+</p>
+<p>&nbsp;</p>
+<p>具体内容如下：</p>
+<p><a href="#Board_Summarize">板卡概述</a></p>
+<p><a href="#Board_Componets">板卡组件</a></p>
+<p><a href="#PXI6509_Mapping">PCI6509 板卡和RTD库模块I/O映射</a></p>
+<p><a href="#Signal_Connection">板卡与外部设备的信号连接</a></p>
+<p><a href="#PXI6509_Board_Handbook">PCI6509 Board 手册</a></p>
+<h2><a name="Board_Summarize">板卡概述</a></h2>
+<p>PCI6509是一个具有多个通道的数字I/O类型的板卡，包括96路输入输出通道，8路为一组，双向可配置。
+
+</p>
+
+<h2><a name="Board_Componets">板卡组件</a></h2>
+<p>PCI6509 板卡与外部设备的连接是通过下面接口（SH100-100-F）实现的。 </p>
+<img  src="images/PXI6509_Hardware_Reference_jiekou.jpg">
+
+<h2><a name="PXI6509_Mapping">PCI6509 板卡和SimpoleD库模块I/O映射</a></h2>
+<p>PCI6509 SimpoleD库中DI模块和DO模块与PCI6509 Board的I/O之间的映射关系如下面几个表所示。PCI6509 板卡Connector中引脚号与相应的Signal名称的对应关系如下表所示。
+
+
+</p>
+
+<img src="images/PXI6509_Hardware_Reference_table.jpg">
+
+
+
+
+
+
+
+
+
+
+<h2><a name="Signal_Connection">板卡与外部设备的信号连接</a></h2>
+<p>在使用PCI6509 DIO端口进行数字输入输出时，可参考下面的信号连接方式，其中Port 0作为数字输出，Port 7作为数字输入。数字输出可以输出TTL信号，驱动外部设备，如LED等；数字输入可以接受TTL输入，感应外部设备状态，如开关信号等。
+</p>
+
+<img src="images/PXI6509_Hardware_Reference_connect1.jpg">
+
+
+
+<p>当外接感性负载时，应该将感性负载和续流二极管并联，因为感性负载内部存储了能量，当状态切换时，产生的反向电动势有可能损害相应端口或供应电源，如下图所示。
+
+</p>
+<img  src="images/PXI6509_Hardware_Reference_connect2.jpg">
+
+
+
+<h2><a name="PXI6509_Board_Handbook">PCI6509 Board 手册</a></h2>
+<p>以上介绍了PCI6509板卡各功能模块电路框图及电气特性，有关板卡的详细信息请参看NI网站。 </p>
+
+<p>&nbsp;</p>
+<table width="100%" border="0"  bgcolor="#E7EBF7" class="tail-font">
+  <tr>
+<th   scope="col">
+<div align="left">
+<a href="Simpole_PCI6509_SimpoleD_Reference.html">
+<img class="tailimg"src="images/b_prev.gif" ></a>
+PCI6509 SimpoleD Reference </div>
+</th>
+
+<th   scope="col">
+<div align="right">
+PCI6509 Implementation Guide
+ <a href="Simpole_PCI6509.html">
+<img class="tailimg"src="images/b_next.gif" ></a> 
+</div>
+</th>
+
+    <th   scope="col"><div align="right"></div></th>
+  </tr>
+</table>
+
+<span class="copyright">&copy; simpole</span>
+
+</body>
+</html>
